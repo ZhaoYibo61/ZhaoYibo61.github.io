@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="Hi，我是一个努力吃胖的小瘦子，欢迎来到我的个人博客！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://zhaoyibo61.github.io/categories/index.html">
+<meta name="description" content="本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。1.scikit-learn 朴素贝叶斯类库朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，Multino">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scikit-learn朴素贝叶斯类库使用经验分享">
+<meta property="og:url" content="https://zhaoyibo61.github.io/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.html">
 <meta property="og:site_name" content="一个努力吃胖的小瘦子的博客">
-<meta property="og:description" content="Hi，我是一个努力吃胖的小瘦子，欢迎来到我的个人博客！">
-<meta property="article:published_time" content="2020-05-12T09:17:19.000Z">
-<meta property="article:modified_time" content="2020-05-12T11:48:42.532Z">
+<meta property="og:description" content="本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。1.scikit-learn 朴素贝叶斯类库朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，Multino">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center">
+<meta property="article:published_time" content="2020-05-12T14:18:35.719Z">
+<meta property="article:modified_time" content="2020-05-06T14:11:26.611Z">
 <meta property="article:author" content="一个努力吃胖的小瘦子">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://zhaoyibo61.github.io/categories/"/>
+  <link rel="canonical" href="https://zhaoyibo61.github.io/2020/05/12/scikit-learn朴素贝叶斯类库使用经验分享/"/>
 
 
 
 
 
-  <title>分类 | 一个努力吃胖的小瘦子的博客</title>
+  <title>scikit-learn朴素贝叶斯类库使用经验分享 | 一个努力吃胖的小瘦子的博客</title>
   
 
 
@@ -269,40 +274,165 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhaoyibo61.github.io/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/QQ.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                暂无分类
-            </div>
-            <div class="category-all">
+          <h1 class="post-title" itemprop="name headline">scikit-learn朴素贝叶斯类库使用经验分享</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-            </div>
-          </div>
-        
-      </div>
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T22:18:35+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" class="leancloud_visitors" data-flag-title="scikit-learn朴素贝叶斯类库使用经验分享">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
+<p><strong>2.GaussianNB</strong><br>GaussianNB假设特征的先验概率为正态分布，即如下式：<br> <img src="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center" alt="在这里插入图片描述">其中Ck为Y的第k类类别。μk和σ2k为需要从训练集估计的值。<br>GaussianNB会根据训练集求出μk和σ2k。μk为在样本类别Ck中，所有Xj的平均值。σ2k为在样本类别Ck中，所有Xj的方差。<br>GaussianNB类的主要参数仅有一个，即先验概率priors ，对应Y的各个类别的先验概率P(Y=Ck)。这个值默认不给出，如果不给出此时P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。如果给出的话就以priors 为准。<br>在使用GaussianNB的fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。<br>predict方法就是我们最常用的预测方法，直接给出测试集的预测类别输出。<br>predict_proba则不同，它会给出测试集样本在各个类别上预测的概率。容易理解，predict_proba预测出的各个类别概率里的最大值对应的类别，也就是predict方法得到类别。<br>predict_log_proba和predict_proba类似，它会给出测试集样本在各个类别上预测的概率的一个对数转化。转化后predict_log_proba预测出的各个类别对数概率里的最大值对应的类别，也就是predict方法得到类别。<br>此外，GaussianNB一个重要的功能是有 partial_fit方法，这个方法的一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等份，重复调用partial_fit来一步步的学习训练集，非常方便。后面介绍的MultinomialNB和BernoulliNB也有类似的功能。</p>
+<p><strong>3.MultinomialNB</strong><br>MultinomialNB假设特征的先验概率为多项式分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center" alt="在这里插入图片描述">)其中，P(Xj=xjl|Y=Ck)是第k个类别的第j维特征的第l个取值条件概率。mk是训练集中输出为第k类的样本个数。λ 为一个大于0的常数，常常取为1，即拉普拉斯平滑。也可以取其他值。<br>MultinomialNB的参数比GaussianNB多，但是一共也仅仅只有3个。其中，参数alpha即为上面的常数λ，如果你没有特别的需要，用默认的1即可。如果发现拟合的不好，需要调优时，可以选择稍大于1或者稍小于1的数。布尔参数fit_prior表示是否要考虑先验概率，如果是false,则所有的样本类别输出都有相同的类别先验概率。否则可以自己用第三个参数class_prior输入先验概率，或者不输入第三个参数class_prior让MultinomialNB自己从训练集样本来计算先验概率，此时的先验概率为P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。总结如下：<br><img src="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center" alt="在这里插入图片描述">在使用MultinomialNB的fit方法或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。　</p>
+<p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
+<p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QR Code.png" alt="一个努力吃胖的小瘦子 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本网站！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/" rel="next" title="用来制作可启动U盘的Windows开源工具--Ventoy">
+                <i class="fa fa-chevron-left"></i> 用来制作可启动U盘的Windows开源工具--Ventoy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="prev" title="Matlab编译安装MatConvnet流程及问题解决">
+                Matlab编译安装MatConvnet流程及问题解决 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Colaboratory免费GPU试用指南，现在我们来一起看一下吧。地址  1. 在Google Drive上创建文件夹Colab用的数据都存储在Google Drive云端硬盘上，所以，我们需要先指定在Google Drive上要用的文件夹。比如说，可以在Google Drive上新建一个“app”文件夹，或者其他什么名字，也可以选择Colab笔记本默认的文件夹。 2. 新建Colab笔记本在刚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一步步带你免费使用Tesla K80 GPU！">
+<meta property="og:url" content="https://zhaoyibo61.github.io/2020/05/12/%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%B8%A6%E4%BD%A0%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8Tesla%20K80%20GPU%EF%BC%81/index.html">
+<meta property="og:site_name" content="一个努力吃胖的小瘦子的博客">
+<meta property="og:description" content="Colaboratory免费GPU试用指南，现在我们来一起看一下吧。地址  1. 在Google Drive上创建文件夹Colab用的数据都存储在Google Drive云端硬盘上，所以，我们需要先指定在Google Drive上要用的文件夹。比如说，可以在Google Drive上新建一个“app”文件夹，或者其他什么名字，也可以选择Colab笔记本默认的文件夹。 2. 新建Colab笔记本在刚">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509152123670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509152339623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509152553490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509153111796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509153217725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509153324742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509153507825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509154319801.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509154435943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200509154544694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020050915463685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-05-12T14:18:35.688Z">
+<meta property="article:modified_time" content="2020-05-09T14:46:27.802Z">
+<meta property="article:author" content="一个努力吃胖的小瘦子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200509152123670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhaoyibo61.github.io/2020/05/12/一步步带你免费使用Tesla K80 GPU！/"/>
+
+
+
+
+
+  <title>一步步带你免费使用Tesla K80 GPU！ | 一个努力吃胖的小瘦子的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a2e0ebebca52a3d594f4581c74967d36";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个努力吃胖的小瘦子的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录生活中的点点滴滴！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhaoyibo61.github.io/2020/05/12/%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%B8%A6%E4%BD%A0%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8Tesla%20K80%20GPU%EF%BC%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/QQ.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一步步带你免费使用Tesla K80 GPU！</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T22:18:35+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/05/12/%E4%B8%80%E6%AD%A5%E6%AD%A5%E5%B8%A6%E4%BD%A0%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8Tesla%20K80%20GPU%EF%BC%81/" class="leancloud_visitors" data-flag-title="一步步带你免费使用Tesla K80 GPU！">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Colaboratory免费GPU试用指南，现在我们来一起看一下吧。<br><a href="https://colab.research.google.com/notebook" target="_blank" rel="noopener">地址</a></p>
+<p> <strong>1. 在Google Drive上创建文件夹</strong><br>Colab用的数据都存储在Google Drive云端硬盘上，所以，我们需要先指定在Google Drive上要用的文件夹。比如说，可以在Google Drive上新建一个“app”文件夹，或者其他什么名字，也可以选择Colab笔记本默认的文件夹。<br><img src="https://img-blog.csdnimg.cn/20200509152123670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>2. 新建Colab笔记本</strong><br>在刚刚创建的app文件夹里点击右键，选择“More/更多”，然后从菜单里选择“Google Colaboratory”，这样就新建出了一个Colab笔记本。如果没有“Google Colaboratory”则需要点击“关联更多应用”添加该插件。之后方可成功新建。<br><img src="https://img-blog.csdnimg.cn/20200509152339623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击笔记本的名字，可以重命名。<br><img src="https://img-blog.csdnimg.cn/20200509152553490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. 设置免费GPU</strong><br>这一步，要改变笔记本所用的默认硬件。在笔记本里点Edit&gt;Notebook settings（修改&gt;笔记本设置），或者Runtime&gt;Change runtime type（运行时&gt;改变运行时类型），然后在Hardware accelerator（硬件加速器）一栏选择GPU。<br><img src="https://img-blog.csdnimg.cn/20200509153111796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200509153217725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>然后点击保存，Google Colab就可以用了。</p>
+<p> <strong>4. 用Colab运行基本Python代码</strong><br> 我们来运行一些Python Numpy教程里的基本数据类型代码。<br> <img src="https://img-blog.csdnimg.cn/20200509153324742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">)更多代码参考斯坦福大学卷积神经网络与视觉识别课程(CS231n)的Python Numpy教程，<a href="http://cs231n.github.io/python-numpy-tutorial/" target="_blank" rel="noopener">地址</a>。运行结果如你所料。</p>
+<p> <strong>5. 用Colab运行.py文件</strong><br> 先运行下面这些代码，来安装必要的库、执行授权。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">!apt-get <span class="keyword">install</span> -y -qq software-properties-common python-software-properties <span class="keyword">module</span>-init-tools</span><br><span class="line">!<span class="keyword">add</span>-apt-repository -y ppa:alessandro-strada/ppa <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/<span class="literal">null</span></span><br><span class="line">!apt-<span class="keyword">get</span> <span class="keyword">update</span> -qq <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/<span class="literal">null</span></span><br><span class="line">!apt-<span class="keyword">get</span> -y <span class="keyword">install</span> -qq google-drive-ocamlfuse fuse</span><br><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> auth</span><br><span class="line">auth.authenticate_user()</span><br><span class="line"><span class="keyword">from</span> oauth2client.client <span class="keyword">import</span> GoogleCredentials</span><br><span class="line">creds = GoogleCredentials.get_application_default()</span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line">!google-drive-ocamlfuse -headless -<span class="keyword">id</span>=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/<span class="literal">null</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> | grep <span class="keyword">URL</span></span><br><span class="line">vcode = getpass.getpass()</span><br><span class="line">!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -<span class="keyword">id</span>=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;</span><br></pre></td></tr></table></figure>
+<p>运行的时候应该会看到下图所示的结果：<br><img src="https://img-blog.csdnimg.cn/20200509153507825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>看见那个链接之后，点击它，复制验证码并粘贴到文本框里。授权完成后，就可以挂载Google Drive了：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">!mkdir -p drive</span></span><br><span class="line"><span class="addition">!google-drive-ocamlfuse drive</span></span><br></pre></td></tr></table></figure>
+<p>安装Keras：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip <span class="keyword">install</span> -q keras</span><br></pre></td></tr></table></figure>
+<p>将mnist_cnn.py文件上传到位于Google云端硬盘上的应用文件夹。运行下面的代码，用MNIST数据集训练一个简单的卷积神经网络：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!python3 drive<span class="regexp">/app/m</span>nist_cnn.py</span><br></pre></td></tr></table></figure>
+<p>从结果中可以看到，每个epoch只需要11秒。</p>
+<p> <strong>6. 下载泰坦尼克数据集(.csv File)，显示前5行</strong><br> 想按照链接下载.csv文件到app文件夹，只需运行：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/vincentarelbundock/</span>Rdatasets<span class="regexp">/master/</span>csv<span class="regexp">/datasets/</span>Titanic.csv -P drive<span class="regexp">/app</span></span><br></pre></td></tr></table></figure>
+<p>也可以直接将.csv文件上传到app文件夹。然后读取app文件夹中的.csv文件，显示前5行：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas <span class="keyword">as</span> pd</span><br><span class="line">titanic = pd.read<span class="constructor">_csv(“<span class="params">drive</span><span class="operator">/</span><span class="params">app</span><span class="operator">/</span>Titanic.<span class="params">csv</span>”)</span></span><br><span class="line">titanic.head(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p> <strong>7. Tips</strong></p>
+<p> <strong>- 如何安装库？</strong><br> 安装Keras：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip install -q keras</span><br><span class="line"><span class="keyword">import</span> keras</span><br></pre></td></tr></table></figure>
+<p>安装PyTorch：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip install -q <span class="symbol">http:</span>/<span class="regexp">/download.pytorch.org/whl</span><span class="regexp">/cu75/torch</span>-0.<span class="number">2.0</span>.post3-cp27-cp27mu-manylinux1_x86_64.whl torchvision</span><br><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></table></figure>
+<p>安装OpenCV：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!apt-get -qq <span class="keyword">install</span> -y libsm6 libxext6 &amp;&amp; pip <span class="keyword">install</span> -q -U opencv-python</span><br><span class="line"><span class="keyword">import</span> cv2</span><br></pre></td></tr></table></figure>
+<p>安装XGBoost：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip install -q xgboost==<span class="number">0.4</span>a30</span><br><span class="line"><span class="keyword">import</span> xgboost</span><br></pre></td></tr></table></figure>
+<p>安装GraphViz：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!apt-get -qq <span class="keyword">install</span> -y graphviz &amp;&amp; pip <span class="keyword">install</span> -q pydot</span><br><span class="line"><span class="keyword">import</span> pydot</span><br></pre></td></tr></table></figure>
+<p>安装7zip Reader：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!apt-get -qq <span class="keyword">install</span> -y libarchive-dev &amp;&amp; pip <span class="keyword">install</span> -q -U libarchive</span><br><span class="line"><span class="keyword">import</span> libarchive</span><br></pre></td></tr></table></figure>
+<p>安装其他库：<br>用<code>!pip install</code>或者<code>!apt-get install</code>命令。</p>
+<p> <strong>- GPU在干活么？</strong><br>要查看你在Colab里是不是真的在用GPU，可以运行以下代码来交叉检查：</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="title">tf</span>.test.gpu_device_name()</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200509154319801.png#pic_center" alt="在这里插入图片描述"><br>如果显示上图的结果，就是在用GPU。</p>
+<p> <strong>- 我在用哪个GPU？</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">from</span> <span class="selector-tag">tensorflow</span><span class="selector-class">.python</span><span class="selector-class">.client</span> <span class="selector-tag">import</span> <span class="selector-tag">device_lib</span></span><br><span class="line"><span class="selector-tag">device_lib</span><span class="selector-class">.list_local_devices</span>()</span><br></pre></td></tr></table></figure>
+<p>其实现在，Colab只提供Tesla K80，所以你会看到下图这样的结果：<br><img src="https://img-blog.csdnimg.cn/20200509154435943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p> <strong>- RAM有多大？</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat /<span class="meta">proc</span>/meminfo</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200509154544694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>- CPU呢？</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat /<span class="meta">proc</span>/cpuinfo</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2020050915463685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>8.总结</strong><br><strong>好好学习，认真薅毛。温馨提示：自备梯子。各位小伙伴快去体验吧！欢迎在评论区留言提问。</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QR Code.png" alt="一个努力吃胖的小瘦子 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本网站！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/12/%E7%9B%B4%E6%8E%A5%E8%B0%83%E8%8A%82%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Open%20Hardware%20Monitor/" rel="next" title="直接调节风扇转速的Windows开源工具--Open Hardware Monitor">
+                <i class="fa fa-chevron-left"></i> 直接调节风扇转速的Windows开源工具--Open Hardware Monitor
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/" rel="prev" title="用来制作可启动U盘的Windows开源工具--Ventoy">
+                用来制作可启动U盘的Windows开源工具--Ventoy <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/QQ.png"
+                alt="一个努力吃胖的小瘦子" />
+            
+              <p class="site-author-name" itemprop="name">一个努力吃胖的小瘦子</p>
+              <p class="site-description motion-element" itemprop="description">Hi，我是一个努力吃胖的小瘦子，欢迎来到我的个人博客！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://me.csdn.net/Zserendipity" target="_blank" title="我的CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yi-ge-nu-li-chi-pang-de-xiao-shou-zi" target="_blank" title="我的知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kuai-le-de-li-jia-wen?utm_source=wechat_session&utm_medium=social&utm_oi=859953875019522048" target="_blank" title="迷途的瓜瓜的知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>迷途的瓜瓜的知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一个努力吃胖的小瘦子</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("tGBPvhK3WtjD1kPVIXBA77iz-gzGzoHsz", "vrvsEr0otEHprLkf0AIt0dWW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

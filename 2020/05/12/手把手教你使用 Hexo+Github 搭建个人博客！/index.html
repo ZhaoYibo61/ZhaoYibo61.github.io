@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！  1. Hexo简介Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手把手教你使用 Hexo+Github 搭建个人博客！">
+<meta property="og:url" content="https://zhaoyibo61.github.io/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/index.html">
+<meta property="og:site_name" content="一个努力吃胖的小瘦子的博客">
+<meta property="og:description" content="搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！  1. Hexo简介Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-05-12T14:18:35.673Z">
+<meta property="article:modified_time" content="2020-05-12T07:55:40.592Z">
+<meta property="article:author" content="一个努力吃胖的小瘦子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhaoyibo61.github.io/2020/05/12/手把手教你使用 Hexo+Github 搭建个人博客！/"/>
+
+
+
+
+
+  <title>手把手教你使用 Hexo+Github 搭建个人博客！ | 一个努力吃胖的小瘦子的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a2e0ebebca52a3d594f4581c74967d36";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个努力吃胖的小瘦子的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录生活中的点点滴滴！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhaoyibo61.github.io/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/QQ.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个努力吃胖的小瘦子的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">手把手教你使用 Hexo+Github 搭建个人博客！</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-12T22:18:35+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/" class="leancloud_visitors" data-flag-title="手把手教你使用 Hexo+Github 搭建个人博客！">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！</strong></p>
+<p> <strong>1. Hexo简介</strong><br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考链接：<br><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a></p>
+<p><strong>2. Hexo安装</strong><br>实验环境：Windows 10 64-bit。<br>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+<ul>
+<li>Node.js   (版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
+<li>Git</li>
+</ul>
+<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。<br><strong>2.1 安装 Node.js</strong><br>Node.js <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载稳定版本就可以。下载完成无特殊要求默认安装即可，一般不会出现问题。</p>
+<p><strong>2.2 安装 Git</strong><br>Git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载完成无特殊要求默认安装即可，一般不会出现问题。这里有一点需要<strong>注意</strong>的是，在下图这一步骤如果选择第一项，则安装完成后会出现：<br><strong>‘git’不是内部或外部命令，也不是可运行的程序或批处理文件</strong>错误，此时需要手动添加相关路径到系统环境变量中即可解决。</p>
+<p>具体为：<br><strong>C:\XXX\Git\bin<br>C:\XXX\Git\mingw64\libexec\git-core</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>检查 Node 跟 Git 版本：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">v10.<span class="number">20.1</span></span><br><span class="line"></span><br><span class="line">$ git --<span class="keyword">version</span></span><br><span class="line">git <span class="keyword">version</span> <span class="number">2.25</span>.<span class="number">0</span>.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2.3 安装 Hexo</strong><br>Git 和 Node.js 都安装好后，接下来在<strong>本地</strong>安装 Hexo，为了避免安装失败，需要切换到阿里云的 NPM 镜像：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
+<p>创建一个用于存放博客文件的文件夹，如 /hexo/blog，然后进入 blog 文件夹全局安装并初始化 Hexo，右键选择 Git Bash Here ，弹出Git Bash窗口。执行命令：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cnpm install -g hexo-cli</span><br><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
+<p>安装完成后，指定文件夹的目录如下：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>其中_config.yml文件用于存放网站的配置信息，你可以在此配置大部分的参数；scaffolds是存放模板的文件夹，当新建文章时，Hexo会根据scaffold来建立文件；source是资源文件夹，用于存放用户资源，themes是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
+<p>在Git Bash终端执行命令，生成静态博客文件：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
+<p>Hexo 将 source 文件夹中的 Markdown 和 HTML 文件解析并放到 public 文件夹中，public 文件夹用于存放静态博客文件，相当于网站根目录。至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，如图所示：<br><img src="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3. 将 Hexo 部署到 GitHub</strong><br><strong>3.1 新建 Git 仓库</strong><br>仓库名必须为 username.github.io 格式，其中 username 是你 GitHub 的用户名。<br><img src="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>按照下图找到自己 Github 的用户名：<br><img src="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center" alt="在这里插入图片描述"><br><strong>3.2 部署</strong><br>快速在项目根目录下找到 _config.yml，找到 deploy 字段并填写完整。</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址</span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>这里<strong>注意</strong>，为了避免出现错误，我<strong>把 _config.yml 中的 Git 仓库链接改成了 SSH 链接，然后又给 Git 账户增加了 ssh key</strong>。</p>
+<p>具体方法如下：</p>
+<p>要使用自动部署首先要安装 hexo-deployer-git 工具：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>配置_config.yml中的deploy：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> <span class="attribute">type</span>: git</span><br><span class="line"> <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your_github_user_name/your_github_user_name.github.io.git</span><br><span class="line"> <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里的 repo 需要设置成你 Git 仓库的 SSH 链接。</strong></p>
+<p>命令行中输入：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C youremail（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>生成 ssh key。接着出现的一些步骤都可以回车跳过，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center" alt="在这里插入图片描述"><br>这样在 C/Users/Administrator/.ssh/id_rsa.pub 文件中就生成了公钥。打开 id_rsa.pub 文件将一整串公钥拷贝下来，进入你的 Github 账户设置，在 ssh and GPG keys 中新增一个 ssh key 配置 Github 账户的 ssh key，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>把刚刚拷贝出来的公钥粘贴到 key 中，title 放空就好，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证 ssh key：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
+<p>出现下面的语句说明你的 ssh key 已经配置好了：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi XXX! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
+<p>初始化本地 Git 仓库，设置 Git 的 user name 和 email：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"XXX"</span>（换成你的用户名）</span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"XXX"</span>（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>在本地的 hexo init 生成的文件夹中初始化 Git 仓库：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
+<p>将本地仓库和远程仓库连接（这一步骤可以不做）：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:your_github_user_name/your_github_user_name<span class="selector-class">.github</span><span class="selector-class">.io</span>.git(远程仓库ssh地址)</span><br></pre></td></tr></table></figure>
+<p>做完以上这些步骤，说明你的仓库可以使用 SSH 方式来上传下载代码，也不需要输入用户名和密码了。最后进行网站部署，如下：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> hexo clean  <span class="comment">//清除缓存文件db.json和已生成的静态文件public</span></span><br><span class="line"><span class="symbol">$</span> hexo g   <span class="comment">//生成网站静态文件到默认设置的public文件夹</span></span><br><span class="line"><span class="symbol">$</span> hexo d   <span class="comment">//部署网站到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>部署成功后会提示：<br><img src="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这样你的 Hexo 博客就部署到了 Github page 上了！</p>
+<p><strong>至此，使用 Hexo+Github 搭建个人博客的整个过程及问题解决方法到此结束，关于对个人博客进行美化、设计等内容我将会再写一篇CSDN博客予以说明，各位小伙伴如果遇到问题请在评论区留言，我会及时回复帮助你解决！</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/QR Code.png" alt="一个努力吃胖的小瘦子 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本网站！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/12/My-New-Post/" rel="next" title="六六和文文">
+                <i class="fa fa-chevron-left"></i> 六六和文文
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/12/%E7%9B%B4%E6%8E%A5%E8%B0%83%E8%8A%82%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Open%20Hardware%20Monitor/" rel="prev" title="直接调节风扇转速的Windows开源工具--Open Hardware Monitor">
+                直接调节风扇转速的Windows开源工具--Open Hardware Monitor <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/QQ.png"
+                alt="一个努力吃胖的小瘦子" />
+            
+              <p class="site-author-name" itemprop="name">一个努力吃胖的小瘦子</p>
+              <p class="site-description motion-element" itemprop="description">Hi，我是一个努力吃胖的小瘦子，欢迎来到我的个人博客！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://me.csdn.net/Zserendipity" target="_blank" title="我的CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/yi-ge-nu-li-chi-pang-de-xiao-shou-zi" target="_blank" title="我的知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/kuai-le-de-li-jia-wen?utm_source=wechat_session&utm_medium=social&utm_oi=859953875019522048" target="_blank" title="迷途的瓜瓜的知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>迷途的瓜瓜的知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">一个努力吃胖的小瘦子</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("tGBPvhK3WtjD1kPVIXBA77iz-gzGzoHsz", "vrvsEr0otEHprLkf0AIt0dWW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
