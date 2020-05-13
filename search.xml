@@ -34,30 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Pytorch中torchvision.datasets.ImageFolder报错：Found 0 files in subfolders of_XXX，完美解决！</title>
-    <url>/2020/05/12/Pytorch%E4%B8%ADtorchvision.datasets.ImageFolder%E6%8A%A5%E9%94%99%EF%BC%9AFound%200%20files%20in%20subfolders%20of_XXX%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
-    <content><![CDATA[<p><strong>1.报错如下：</strong></p>
-<p>RuntimeError: Found 0 files in subfolders of:XXX<br>Supported extensions are: .jpg,.jpeg,.png,.ppm,.bmp,.pgm,.tif,.tiff,webp</p>
-<p><strong>这个错误一般发生在调用torchvision.datasets.ImageFolder训练模型读取数据时，主要原因是数据存储路径与数据读取路径不一致。</strong></p>
-<p><strong>2.解决方法：</strong></p>
-<p>如在使用神经网络模型处理猫狗数据集时，此时的数据集为大量的猫狗图片，且数据集存储路径为:”/文件夹/Dog.0.jpg”或”/文件夹/Cat.1.jpg”，则此时的数据读取路径应该为:”/文件夹”。否则将会报错。</p>
-<p><strong>3.总结</strong></p>
-<p>在平时进行实验时，虽然说对数据集的读取方面可能不会有太多问题，但是还是要认真细致一点，避免出现不必要的问题，这样也能提高工作的效率。</p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>torchvision</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Matlab编译安装MatConvnet流程及问题解决</title>
     <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
@@ -103,6 +79,30 @@
       <tags>
         <tag>Matlab</tag>
         <tag>MatConvnet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Pytorch中torchvision.datasets.ImageFolder报错：Found 0 files in subfolders of_XXX，完美解决！</title>
+    <url>/2020/05/12/Pytorch%E4%B8%ADtorchvision.datasets.ImageFolder%E6%8A%A5%E9%94%99%EF%BC%9AFound%200%20files%20in%20subfolders%20of_XXX%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
+    <content><![CDATA[<p><strong>1.报错如下：</strong></p>
+<p>RuntimeError: Found 0 files in subfolders of:XXX<br>Supported extensions are: .jpg,.jpeg,.png,.ppm,.bmp,.pgm,.tif,.tiff,webp</p>
+<p><strong>这个错误一般发生在调用torchvision.datasets.ImageFolder训练模型读取数据时，主要原因是数据存储路径与数据读取路径不一致。</strong></p>
+<p><strong>2.解决方法：</strong></p>
+<p>如在使用神经网络模型处理猫狗数据集时，此时的数据集为大量的猫狗图片，且数据集存储路径为:”/文件夹/Dog.0.jpg”或”/文件夹/Cat.1.jpg”，则此时的数据读取路径应该为:”/文件夹”。否则将会报错。</p>
+<p><strong>3.总结</strong></p>
+<p>在平时进行实验时，虽然说对数据集的读取方面可能不会有太多问题，但是还是要认真细致一点，避免出现不必要的问题，这样也能提高工作的效率。</p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>torchvision</tag>
       </tags>
   </entry>
   <entry>
@@ -190,23 +190,6 @@
       </tags>
   </entry>
   <entry>
-    <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
-    <url>/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[<p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
-<p><strong>2.GaussianNB</strong><br>GaussianNB假设特征的先验概率为正态分布，即如下式：<br> <img src="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center" alt="在这里插入图片描述">其中Ck为Y的第k类类别。μk和σ2k为需要从训练集估计的值。<br>GaussianNB会根据训练集求出μk和σ2k。μk为在样本类别Ck中，所有Xj的平均值。σ2k为在样本类别Ck中，所有Xj的方差。<br>GaussianNB类的主要参数仅有一个，即先验概率priors ，对应Y的各个类别的先验概率P(Y=Ck)。这个值默认不给出，如果不给出此时P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。如果给出的话就以priors 为准。<br>在使用GaussianNB的fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。<br>predict方法就是我们最常用的预测方法，直接给出测试集的预测类别输出。<br>predict_proba则不同，它会给出测试集样本在各个类别上预测的概率。容易理解，predict_proba预测出的各个类别概率里的最大值对应的类别，也就是predict方法得到类别。<br>predict_log_proba和predict_proba类似，它会给出测试集样本在各个类别上预测的概率的一个对数转化。转化后predict_log_proba预测出的各个类别对数概率里的最大值对应的类别，也就是predict方法得到类别。<br>此外，GaussianNB一个重要的功能是有 partial_fit方法，这个方法的一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等份，重复调用partial_fit来一步步的学习训练集，非常方便。后面介绍的MultinomialNB和BernoulliNB也有类似的功能。</p>
-<p><strong>3.MultinomialNB</strong><br>MultinomialNB假设特征的先验概率为多项式分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center" alt="在这里插入图片描述">)其中，P(Xj=xjl|Y=Ck)是第k个类别的第j维特征的第l个取值条件概率。mk是训练集中输出为第k类的样本个数。λ 为一个大于0的常数，常常取为1，即拉普拉斯平滑。也可以取其他值。<br>MultinomialNB的参数比GaussianNB多，但是一共也仅仅只有3个。其中，参数alpha即为上面的常数λ，如果你没有特别的需要，用默认的1即可。如果发现拟合的不好，需要调优时，可以选择稍大于1或者稍小于1的数。布尔参数fit_prior表示是否要考虑先验概率，如果是false,则所有的样本类别输出都有相同的类别先验概率。否则可以自己用第三个参数class_prior输入先验概率，或者不输入第三个参数class_prior让MultinomialNB自己从训练集样本来计算先验概率，此时的先验概率为P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。总结如下：<br><img src="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center" alt="在这里插入图片描述">在使用MultinomialNB的fit方法或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。　</p>
-<p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
-<p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>scikit-learn</tag>
-        <tag>朴素贝叶斯</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>sklearn-SVM：数据归一化及模型调参</title>
     <url>/2020/05/12/sklearn-SVM%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80%E5%8C%96%E5%8F%8A%E6%A8%A1%E5%9E%8B%E8%B0%83%E5%8F%82/</url>
     <content><![CDATA[<p><strong>1.基本环境</strong><br>编译器：PyCharm 2019.1.2<br>虚拟环境：Anaconda虚拟环境<br>scikit-learn版本: 0.22.2.post1</p>
@@ -225,6 +208,42 @@
         <tag>SVM</tag>
         <tag>数据归一化</tag>
         <tag>模型调参</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
+    <url>/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[<p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
+<p><strong>2.GaussianNB</strong><br>GaussianNB假设特征的先验概率为正态分布，即如下式：<br> <img src="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center" alt="在这里插入图片描述">其中Ck为Y的第k类类别。μk和σ2k为需要从训练集估计的值。<br>GaussianNB会根据训练集求出μk和σ2k。μk为在样本类别Ck中，所有Xj的平均值。σ2k为在样本类别Ck中，所有Xj的方差。<br>GaussianNB类的主要参数仅有一个，即先验概率priors ，对应Y的各个类别的先验概率P(Y=Ck)。这个值默认不给出，如果不给出此时P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。如果给出的话就以priors 为准。<br>在使用GaussianNB的fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。<br>predict方法就是我们最常用的预测方法，直接给出测试集的预测类别输出。<br>predict_proba则不同，它会给出测试集样本在各个类别上预测的概率。容易理解，predict_proba预测出的各个类别概率里的最大值对应的类别，也就是predict方法得到类别。<br>predict_log_proba和predict_proba类似，它会给出测试集样本在各个类别上预测的概率的一个对数转化。转化后predict_log_proba预测出的各个类别对数概率里的最大值对应的类别，也就是predict方法得到类别。<br>此外，GaussianNB一个重要的功能是有 partial_fit方法，这个方法的一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等份，重复调用partial_fit来一步步的学习训练集，非常方便。后面介绍的MultinomialNB和BernoulliNB也有类似的功能。</p>
+<p><strong>3.MultinomialNB</strong><br>MultinomialNB假设特征的先验概率为多项式分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center" alt="在这里插入图片描述">)其中，P(Xj=xjl|Y=Ck)是第k个类别的第j维特征的第l个取值条件概率。mk是训练集中输出为第k类的样本个数。λ 为一个大于0的常数，常常取为1，即拉普拉斯平滑。也可以取其他值。<br>MultinomialNB的参数比GaussianNB多，但是一共也仅仅只有3个。其中，参数alpha即为上面的常数λ，如果你没有特别的需要，用默认的1即可。如果发现拟合的不好，需要调优时，可以选择稍大于1或者稍小于1的数。布尔参数fit_prior表示是否要考虑先验概率，如果是false,则所有的样本类别输出都有相同的类别先验概率。否则可以自己用第三个参数class_prior输入先验概率，或者不输入第三个参数class_prior让MultinomialNB自己从训练集样本来计算先验概率，此时的先验概率为P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。总结如下：<br><img src="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center" alt="在这里插入图片描述">在使用MultinomialNB的fit方法或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。　</p>
+<p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
+<p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>scikit-learn</tag>
+        <tag>朴素贝叶斯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>visdom安装及报错解决方案</title>
+    <url>/2020/05/12/visdom%E5%AE%89%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p><strong>一、安装</strong> </p>
+<p><strong>1.使用conda命令安装</strong><br>        在命令行执行”conda install visdom”命令即可完成下载及安装（自动选择适合系统的版本）。</p>
+<p><strong>2.检查安装是否成功</strong><br>        在命令行执行”python -m visdom.server”命令即可启动visdom服务，若安装成功则点击命令行出现的链接即可跳转到浏览器窗口，显示窗体等相关组件则正确完成安装。</p>
+<p><strong>二、报错解决方案</strong></p>
+<p><strong>1.报错提示：缺少相关包文件</strong><br>        在命令行执行”conda install XXX”命令安装对应的包文件，然后重新执行”python -m visdom.server”即可解决。</p>
+<p><strong>2.浏览器窗口蓝屏，无法显示窗体等相关组件。</strong><br>        这个错误产生的原因是由于visdom服务在首次启动时需要联网（包括外网）下载一些运行所需的文件，如js、css、fonts等。虽然说新版本（0.1.8.9+）已经解决了无法下载的问题，但是还存在下载速度慢、防火墙限制等问题，因此下载过程十分漫长还极易出错，因此本人在此分享visdom服务所需的相关文件，请有需要的童鞋下载并覆盖。<br>        本人visdom/static文件夹路径为：”D:\Software\Anaconda\Anaconda3\envs\pytorch\Lib\site-packages\visdom\static”，请对照自行修改路径进行覆盖。<br>        static文件夹下所包括的文件及文件夹结构如下图：<br>        <img src="https://img-blog.csdnimg.cn/20200401120724663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="static文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120748397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="css文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120803816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="fonts文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120817433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="js文件夹"></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>visdom</tag>
+        <tag>python</tag>
+        <tag>conda</tag>
       </tags>
   </entry>
   <entry>
@@ -280,25 +299,6 @@
         <tag>GPU</tag>
         <tag>Tesla K80</tag>
         <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>visdom安装及报错解决方案</title>
-    <url>/2020/05/12/visdom%E5%AE%89%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p><strong>一、安装</strong> </p>
-<p><strong>1.使用conda命令安装</strong><br>        在命令行执行”conda install visdom”命令即可完成下载及安装（自动选择适合系统的版本）。</p>
-<p><strong>2.检查安装是否成功</strong><br>        在命令行执行”python -m visdom.server”命令即可启动visdom服务，若安装成功则点击命令行出现的链接即可跳转到浏览器窗口，显示窗体等相关组件则正确完成安装。</p>
-<p><strong>二、报错解决方案</strong></p>
-<p><strong>1.报错提示：缺少相关包文件</strong><br>        在命令行执行”conda install XXX”命令安装对应的包文件，然后重新执行”python -m visdom.server”即可解决。</p>
-<p><strong>2.浏览器窗口蓝屏，无法显示窗体等相关组件。</strong><br>        这个错误产生的原因是由于visdom服务在首次启动时需要联网（包括外网）下载一些运行所需的文件，如js、css、fonts等。虽然说新版本（0.1.8.9+）已经解决了无法下载的问题，但是还存在下载速度慢、防火墙限制等问题，因此下载过程十分漫长还极易出错，因此本人在此分享visdom服务所需的相关文件，请有需要的童鞋下载并覆盖。<br>        本人visdom/static文件夹路径为：”D:\Software\Anaconda\Anaconda3\envs\pytorch\Lib\site-packages\visdom\static”，请对照自行修改路径进行覆盖。<br>        static文件夹下所包括的文件及文件夹结构如下图：<br>        <img src="https://img-blog.csdnimg.cn/20200401120724663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="static文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120748397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="css文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120803816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="fonts文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120817433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="js文件夹"></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>visdom</tag>
-        <tag>python</tag>
-        <tag>conda</tag>
       </tags>
   </entry>
   <entry>
@@ -393,6 +393,46 @@
       </tags>
   </entry>
   <entry>
+    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
+    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
+    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
+<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
+<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
+<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
+<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
+<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
+<p><strong>6.Ventoy 特点列表</strong></p>
+<ul>
+<li>开源、易用</li>
+<li>快速 （拷贝文件有多快就有多快）</li>
+<li>直接从 ISO 文件启动，无需解开</li>
+<li>无差异支持 Legacy + UEFI 模式</li>
+<li>UEFI 模式支持安全启动 （Secure Boot）</li>
+<li>支持超过 4GB 的 ISO 文件</li>
+<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
+<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
+<li>不仅仅是启动，而是完整的安装过程</li>
+<li>提出 “Ventoy Compatible” 概念</li>
+<li>支持插件扩展</li>
+<li>启动过程中支持 U 盘设置写保护</li>
+<li>不影响 U 盘日常普通使用</li>
+<li>版本升级时数据不会丢失</li>
+<li>无需跟随操作系统升级而升级 Ventoy</li>
+</ul>
+<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
+]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>Ventoy</tag>
+        <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
     <url>/2020/05/12/%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%97%B6GPU%E6%98%BE%E5%AD%98%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
     <content><![CDATA[<p><strong>前言</strong></p>
@@ -483,46 +523,6 @@
         <tag>GPU</tag>
         <tag>深度神经网络模型</tag>
         <tag>显存</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
-    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
-    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
-<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
-<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
-<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
-<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
-<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
-<p><strong>6.Ventoy 特点列表</strong></p>
-<ul>
-<li>开源、易用</li>
-<li>快速 （拷贝文件有多快就有多快）</li>
-<li>直接从 ISO 文件启动，无需解开</li>
-<li>无差异支持 Legacy + UEFI 模式</li>
-<li>UEFI 模式支持安全启动 （Secure Boot）</li>
-<li>支持超过 4GB 的 ISO 文件</li>
-<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
-<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
-<li>不仅仅是启动，而是完整的安装过程</li>
-<li>提出 “Ventoy Compatible” 概念</li>
-<li>支持插件扩展</li>
-<li>启动过程中支持 U 盘设置写保护</li>
-<li>不影响 U 盘日常普通使用</li>
-<li>版本升级时数据不会丢失</li>
-<li>无需跟随操作系统升级而升级 Ventoy</li>
-</ul>
-<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
-]]></content>
-      <categories>
-        <category>Windows软件</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>工具</tag>
-        <tag>Ventoy</tag>
-        <tag>开源</tag>
       </tags>
   </entry>
   <entry>
