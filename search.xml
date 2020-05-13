@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
+    <title>Matlab编译安装MatConvnet流程及问题解决</title>
+    <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
+<p><strong>一、安装及编译流程</strong></p>
+<p> <strong>1. MatConvNet介绍：</strong> <a href="https://www.vlfeat.org/matconvnet/install/#compiling" target="_blank" rel="noopener">Installing - MatConvNet</a><br> <strong>2. 配置编译器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mex -setup</span><br></pre></td></tr></table></figure>
+
+<p> <strong>3. 编译用于CPU的库</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> &lt;MatConvNet&gt;</span><br><span class="line">&gt; addpath matlab</span><br><span class="line">&gt; vl_compilenn</span><br></pre></td></tr></table></figure>
+
+<p> <strong>4. 编译用于GPU的库</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; vl_compilenn(<span class="string">'enableGpu'</span>,<span class="literal">true</span>,<span class="string">'cudaRoot'</span>,<span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0'</span>,<span class="string">'cudaMethod'</span> ,<span class="string">'nvcc'</span>,<span class="string">'enableCudnn'</span>,<span class="string">'true'</span>,<span class="string">'cudnnRoot'</span>,<span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>上述4步执行完如无报错则说明安装编译成功。</strong></p>
+<p><strong>下面介绍安装编译过程中遇到的问题及成功解决方法。</strong></p>
+<p><strong>二、问题及解决方法(注意本文中所涉及的文件路径请根据自身实际情况就行修改)</strong></p>
+<p> <strong>1. 报错1</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Warning: CL.EXE not found <span class="keyword">in</span> PATH. Trying to guess out of mex setup. </span><br><span class="line">&gt; In vl_compilenn&gt;check_clpath (line 650)</span><br><span class="line">  In vl_compilenn (line 426) </span><br><span class="line"><span class="string">'cl.exe'</span> is not recognized as an internal or external <span class="built_in">command</span>, </span><br><span class="line">operable program or batch file. </span><br><span class="line">Error using vl_compilenn&gt;check_clpath (line 656)</span><br><span class="line">Unable to find cl.exe</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 426)</span><br><span class="line">    cl_path = fileparts(check_clpath()); % check whether cl.exe <span class="keyword">in</span> path</span><br></pre></td></tr></table></figure>
+<p>解决方法：把 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx64\x64 下的cl.exe复制到 D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\ 下。</p>
+<p> <strong>2. 报错2</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">".local\cudnn\include"</span> -O -DNDEBUG -D_FORCE_INLINES --std=c++11</span><br><span class="line">-I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
+<p>解决方法：在 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC 下创建bin文件夹。</p>
+<p> <strong>3. 报错3</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">c:\program files\nvidia gpu computing toolkit\cuda\v9.0\include\crt/host_config.h(133): fatal error C1189: <span class="comment">#error:  -- unsupported Microsoft Visual Studio version! Only the versions 2012, 2013, 2015 and 2017 are supported! </span></span><br><span class="line">nvcc warning : The -std=c++11 flag is not supported with the configured host compiler. Flag will be ignored. </span><br><span class="line">data.cu </span><br><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\include"</span> -O -DNDEBUG -D_FORCE_INLINES</span><br><span class="line">--std=c++11 -I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
+<p>错误原因：CUDA和VS版本不匹配。<br>解决方法：打开C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\crt\host_config.h，把<br>#if _MSC_VER &lt; 1600 || _MSC_VER &gt; 1911<br>改为：<br>#if _MSC_VER &lt; 1600 || _MSC_VER &gt; 1920 // 只要版本号够高就行，随便挑个数字<br>即可解决。</p>
+<p> <strong>4. 报错4</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">0x00007FF64188ADD0 (0x0000000000000000 0x000001E56C1C7F18 0x000066BA00000001 0x00000004000304ED) </span><br><span class="line">0x00007FF641886F3D (0x0000009EBEFFE798 0x0000000000000000 0x0000000000000000 0x000001E56C1DCE20) </span><br><span class="line">0x00007FF641888713 (0xnvcc warning : The -std=c++11 flag is not supported with the configured host compiler. Flag will be ignored. </span><br><span class="line">data.cu </span><br><span class="line">nvcc error   : <span class="string">'cicc'</span> died with status 0xC0000005 (ACCESS_VIOLATION) </span><br><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\include"</span> -O -DNDEBUG -D_FORCE_INLINES</span><br><span class="line">--std=c++11 -I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
+<p>错误原因：使用CUDA9.0可能会导致上述错误。<br>解决方法：当使用Visual Studio 2017 Community时，CUDA使用 10.0版本。即搭配为<strong>Compatible: Visual Studio 2017 | Cuda 10.0 | Matlab R2018a</strong>。重新编译即可解决。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; vl_compilenn(<span class="string">'enableGpu'</span>, <span class="literal">true</span>, ...</span><br><span class="line">  <span class="string">'cudaRoot'</span>, <span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0'</span>, ...</span><br><span class="line">  <span class="string">'cudaMethod'</span>, <span class="string">'nvcc'</span>, ...</span><br><span class="line">  <span class="string">'enableCudnn'</span>, <span class="literal">true</span>, ...</span><br><span class="line">  <span class="string">'cudnnRoot'</span>, <span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0'</span>);</span><br></pre></td></tr></table></figure>
+
+<p> <strong>5. 报错5</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MatConvNet compiled with <span class="string">'-R2018a'</span> and linked with <span class="string">'-R2017b'</span></span><br></pre></td></tr></table></figure>
+<p>解决方法：把 {MatConvNet路径}/matlab/vl_compilenn.m 第620行附近改成：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">args = horzcat(&#123;<span class="string">'-outdir'</span>, mex_dir&#125;, ...</span><br><span class="line">flags.base, flags.mexlink, ...</span><br><span class="line"><span class="string">'-R2018a'</span>,...//新增</span><br><span class="line">&#123;[<span class="string">'LDFLAGS=$LDFLAGS '</span> strjoin(flags.mexlink_ldflags)]&#125;, ...</span><br><span class="line">&#123;[<span class="string">'LDOPTIMFLAGS=$LDOPTIMFLAGS '</span> strjoin(flags.mexlink_ldoptimflags)]&#125;, ...</span><br><span class="line">&#123;[<span class="string">'LINKLIBS='</span> strjoin(flags.mexlink_linklibs) <span class="string">' $LINKLIBS'</span>]&#125;, ...</span><br><span class="line">objs) ;</span><br></pre></td></tr></table></figure>
+<p>同时把第359行附近改成：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flags.mexlink = &#123;<span class="string">'-lmwblas'</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>即可解决。</p>
+<p><strong>至此，使用Matlab编译安装MatConvnet的流程及在这个过程中遇到的问题和解决方法总结如上所示，请各位小伙伴认真对照修改，一定可以解决！如有问题请在评论区留言，我会及时回复！</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>MatConvnet</tag>
+      </tags>
   </entry>
   <entry>
     <title>LaTeX-TeXlive和TeXstudio的下载、安装配置及使用</title>
@@ -58,52 +101,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Matlab编译安装MatConvnet流程及问题解决</title>
-    <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
-<p><strong>一、安装及编译流程</strong></p>
-<p> <strong>1. MatConvNet介绍：</strong> <a href="https://www.vlfeat.org/matconvnet/install/#compiling" target="_blank" rel="noopener">Installing - MatConvNet</a><br> <strong>2. 配置编译器</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mex -setup</span><br></pre></td></tr></table></figure>
-
-<p> <strong>3. 编译用于CPU的库</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> &lt;MatConvNet&gt;</span><br><span class="line">&gt; addpath matlab</span><br><span class="line">&gt; vl_compilenn</span><br></pre></td></tr></table></figure>
-
-<p> <strong>4. 编译用于GPU的库</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; vl_compilenn(<span class="string">'enableGpu'</span>,<span class="literal">true</span>,<span class="string">'cudaRoot'</span>,<span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0'</span>,<span class="string">'cudaMethod'</span> ,<span class="string">'nvcc'</span>,<span class="string">'enableCudnn'</span>,<span class="string">'true'</span>,<span class="string">'cudnnRoot'</span>,<span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA'</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>上述4步执行完如无报错则说明安装编译成功。</strong></p>
-<p><strong>下面介绍安装编译过程中遇到的问题及成功解决方法。</strong></p>
-<p><strong>二、问题及解决方法(注意本文中所涉及的文件路径请根据自身实际情况就行修改)</strong></p>
-<p> <strong>1. 报错1</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Warning: CL.EXE not found <span class="keyword">in</span> PATH. Trying to guess out of mex setup. </span><br><span class="line">&gt; In vl_compilenn&gt;check_clpath (line 650)</span><br><span class="line">  In vl_compilenn (line 426) </span><br><span class="line"><span class="string">'cl.exe'</span> is not recognized as an internal or external <span class="built_in">command</span>, </span><br><span class="line">operable program or batch file. </span><br><span class="line">Error using vl_compilenn&gt;check_clpath (line 656)</span><br><span class="line">Unable to find cl.exe</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 426)</span><br><span class="line">    cl_path = fileparts(check_clpath()); % check whether cl.exe <span class="keyword">in</span> path</span><br></pre></td></tr></table></figure>
-<p>解决方法：把 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx64\x64 下的cl.exe复制到 D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\ 下。</p>
-<p> <strong>2. 报错2</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">".local\cudnn\include"</span> -O -DNDEBUG -D_FORCE_INLINES --std=c++11</span><br><span class="line">-I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
-<p>解决方法：在 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC 下创建bin文件夹。</p>
-<p> <strong>3. 报错3</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">c:\program files\nvidia gpu computing toolkit\cuda\v9.0\include\crt/host_config.h(133): fatal error C1189: <span class="comment">#error:  -- unsupported Microsoft Visual Studio version! Only the versions 2012, 2013, 2015 and 2017 are supported! </span></span><br><span class="line">nvcc warning : The -std=c++11 flag is not supported with the configured host compiler. Flag will be ignored. </span><br><span class="line">data.cu </span><br><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\include"</span> -O -DNDEBUG -D_FORCE_INLINES</span><br><span class="line">--std=c++11 -I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
-<p>错误原因：CUDA和VS版本不匹配。<br>解决方法：打开C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include\crt\host_config.h，把<br>#if _MSC_VER &lt; 1600 || _MSC_VER &gt; 1911<br>改为：<br>#if _MSC_VER &lt; 1600 || _MSC_VER &gt; 1920 // 只要版本号够高就行，随便挑个数字<br>即可解决。</p>
-<p> <strong>4. 报错4</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">0x00007FF64188ADD0 (0x0000000000000000 0x000001E56C1C7F18 0x000066BA00000001 0x00000004000304ED) </span><br><span class="line">0x00007FF641886F3D (0x0000009EBEFFE798 0x0000000000000000 0x0000000000000000 0x000001E56C1DCE20) </span><br><span class="line">0x00007FF641888713 (0xnvcc warning : The -std=c++11 flag is not supported with the configured host compiler. Flag will be ignored. </span><br><span class="line">data.cu </span><br><span class="line">nvcc error   : <span class="string">'cicc'</span> died with status 0xC0000005 (ACCESS_VIOLATION) </span><br><span class="line">Error using vl_compilenn&gt;nvcc_compile (line 615)</span><br><span class="line">Command <span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin\nvcc"</span> -c -o</span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\mex\.build\bits\data.obj"</span></span><br><span class="line"><span class="string">"D:\Matlab\matconvnet-1.0-beta25\matconvnet-1.0-beta25\matlab\src\bits\data.cu"</span> -DENABLE_GPU -DENABLE_DOUBLE</span><br><span class="line">-DENABLE_CUDNN -I<span class="string">"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\include"</span> -O -DNDEBUG -D_FORCE_INLINES</span><br><span class="line">--std=c++11 -I<span class="string">"D:\Matlab\extern\include"</span> -I<span class="string">"D:\Matlab\toolbox\distcomp\gpu\extern\include"</span></span><br><span class="line">-gencode=arch=compute_52,code=\"sm_52,compute_52\"  --compiler-options=/MD --compiler-bindir=<span class="string">"C:\Program</span></span><br><span class="line"><span class="string">Files (x86)\Microsoft Visual Studio\2017\Community\VC\bin"</span>  failed.</span><br><span class="line"></span><br><span class="line">Error <span class="keyword">in</span> vl_compilenn (line 487)</span><br><span class="line">      nvcc_compile(opts, srcs&#123;i&#125;, objfile, flags) ;</span><br></pre></td></tr></table></figure>
-<p>错误原因：使用CUDA9.0可能会导致上述错误。<br>解决方法：当使用Visual Studio 2017 Community时，CUDA使用 10.0版本。即搭配为<strong>Compatible: Visual Studio 2017 | Cuda 10.0 | Matlab R2018a</strong>。重新编译即可解决。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; vl_compilenn(<span class="string">'enableGpu'</span>, <span class="literal">true</span>, ...</span><br><span class="line">  <span class="string">'cudaRoot'</span>, <span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0'</span>, ...</span><br><span class="line">  <span class="string">'cudaMethod'</span>, <span class="string">'nvcc'</span>, ...</span><br><span class="line">  <span class="string">'enableCudnn'</span>, <span class="literal">true</span>, ...</span><br><span class="line">  <span class="string">'cudnnRoot'</span>, <span class="string">'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0'</span>);</span><br></pre></td></tr></table></figure>
-
-<p> <strong>5. 报错5</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MatConvNet compiled with <span class="string">'-R2018a'</span> and linked with <span class="string">'-R2017b'</span></span><br></pre></td></tr></table></figure>
-<p>解决方法：把 {MatConvNet路径}/matlab/vl_compilenn.m 第620行附近改成：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">args = horzcat(&#123;<span class="string">'-outdir'</span>, mex_dir&#125;, ...</span><br><span class="line">flags.base, flags.mexlink, ...</span><br><span class="line"><span class="string">'-R2018a'</span>,...//新增</span><br><span class="line">&#123;[<span class="string">'LDFLAGS=$LDFLAGS '</span> strjoin(flags.mexlink_ldflags)]&#125;, ...</span><br><span class="line">&#123;[<span class="string">'LDOPTIMFLAGS=$LDOPTIMFLAGS '</span> strjoin(flags.mexlink_ldoptimflags)]&#125;, ...</span><br><span class="line">&#123;[<span class="string">'LINKLIBS='</span> strjoin(flags.mexlink_linklibs) <span class="string">' $LINKLIBS'</span>]&#125;, ...</span><br><span class="line">objs) ;</span><br></pre></td></tr></table></figure>
-<p>同时把第359行附近改成：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flags.mexlink = &#123;<span class="string">'-lmwblas'</span>&#125;;</span><br></pre></td></tr></table></figure>
-<p>即可解决。</p>
-<p><strong>至此，使用Matlab编译安装MatConvnet的流程及在这个过程中遇到的问题和解决方法总结如上所示，请各位小伙伴认真对照修改，一定可以解决！如有问题请在评论区留言，我会及时回复！</strong></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Matlab</tag>
-        <tag>MatConvnet</tag>
-      </tags>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>TensorLy-神经网络张量库</title>
@@ -131,24 +131,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>cFosSpeed简介、下载安装、注册及配置教程</title>
     <url>/2020/05/12/cFosSpeed%E7%AE%80%E4%BB%8B%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E3%80%81%E6%B3%A8%E5%86%8C%E5%8F%8A%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p><strong>一、cFosSpeed是什么？</strong><br>cFosSpeed软件是Windows操作系统下的一款重要的网络工具软件，其特别的通信流量调整功能可以保证网络在上传下载工作时均保持满速高速的运行状态，可对已有网络带宽的利用发挥到极致。</p>
@@ -172,22 +154,22 @@
       </tags>
   </entry>
   <entry>
-    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
-    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
-    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
-<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
-<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
-<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
-<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
+    <title>Hello World</title>
+    <url>/2020/05/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>Ananconda</tag>
-        <tag>torch</tag>
-      </tags>
   </entry>
   <entry>
     <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
@@ -204,6 +186,24 @@
       <tags>
         <tag>scikit-learn</tag>
         <tag>朴素贝叶斯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
+    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
+<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
+<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
+<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
+<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>Ananconda</tag>
+        <tag>torch</tag>
       </tags>
   </entry>
   <entry>
@@ -332,67 +332,6 @@
       </tags>
   </entry>
   <entry>
-    <title>手把手教你使用 Hexo+Github 搭建个人博客！</title>
-    <url>/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/</url>
-    <content><![CDATA[<p><strong>搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！</strong></p>
-<a id="more"></a>
-<p><strong>1. Hexo简介</strong><br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考链接：<br><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a></p>
-<p><strong>2. Hexo安装</strong><br>实验环境：Windows 10 64-bit。<br>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
-<ul>
-<li>Node.js   (版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
-<li>Git</li>
-</ul>
-<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。<br><strong>2.1 安装 Node.js</strong><br>Node.js <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载稳定版本就可以。下载完成无特殊要求默认安装即可，一般不会出现问题。</p>
-<p><strong>2.2 安装 Git</strong><br>Git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载完成无特殊要求默认安装即可，一般不会出现问题。这里有一点需要<strong>注意</strong>的是，在下图这一步骤如果选择第一项，则安装完成后会出现：<br><strong>‘git’不是内部或外部命令，也不是可运行的程序或批处理文件</strong>错误，此时需要手动添加相关路径到系统环境变量中即可解决。</p>
-<p>具体为：<br><strong>C:\XXX\Git\bin<br>C:\XXX\Git\mingw64\libexec\git-core</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>检查 Node 跟 Git 版本：</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">v10.<span class="number">20.1</span></span><br><span class="line"></span><br><span class="line">$ git --<span class="keyword">version</span></span><br><span class="line">git <span class="keyword">version</span> <span class="number">2.25</span>.<span class="number">0</span>.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2.3 安装 Hexo</strong><br>Git 和 Node.js 都安装好后，接下来在<strong>本地</strong>安装 Hexo，为了避免安装失败，需要切换到阿里云的 NPM 镜像：</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
-<p>创建一个用于存放博客文件的文件夹，如 /hexo/blog，然后进入 blog 文件夹全局安装并初始化 Hexo，右键选择 Git Bash Here ，弹出Git Bash窗口。执行命令：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>cnpm install -g hexo-cli</span><br><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
-<p>安装完成后，指定文件夹的目录如下：</p>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<p>其中_config.yml文件用于存放网站的配置信息，你可以在此配置大部分的参数；scaffolds是存放模板的文件夹，当新建文章时，Hexo会根据scaffold来建立文件；source是资源文件夹，用于存放用户资源，themes是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
-<p>在Git Bash终端执行命令，生成静态博客文件：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
-<p>Hexo 将 source 文件夹中的 Markdown 和 HTML 文件解析并放到 public 文件夹中，public 文件夹用于存放静态博客文件，相当于网站根目录。至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，如图所示：<br><img src="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3. 将 Hexo 部署到 GitHub</strong><br><strong>3.1 新建 Git 仓库</strong><br>仓库名必须为 username.github.io 格式，其中 username 是你 GitHub 的用户名。<br><img src="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>按照下图找到自己 Github 的用户名：<br><img src="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center" alt="在这里插入图片描述"><br><strong>3.2 部署</strong><br>快速在项目根目录下找到 _config.yml，找到 deploy 字段并填写完整。</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址</span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
-<p>这里<strong>注意</strong>，为了避免出现错误，我<strong>把 _config.yml 中的 Git 仓库链接改成了 SSH 链接，然后又给 Git 账户增加了 ssh key</strong>。</p>
-<p>具体方法如下：</p>
-<p>要使用自动部署首先要安装 hexo-deployer-git 工具：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<p>配置_config.yml中的deploy：</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> <span class="attribute">type</span>: git</span><br><span class="line"> <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your_github_user_name/your_github_user_name.github.io.git</span><br><span class="line"> <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
-<p><strong>注意：这里的 repo 需要设置成你 Git 仓库的 SSH 链接。</strong></p>
-<p>命令行中输入：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C youremail（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
-<p>生成 ssh key。接着出现的一些步骤都可以回车跳过，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center" alt="在这里插入图片描述"><br>这样在 C/Users/Administrator/.ssh/id_rsa.pub 文件中就生成了公钥。打开 id_rsa.pub 文件将一整串公钥拷贝下来，进入你的 Github 账户设置，在 ssh and GPG keys 中新增一个 ssh key 配置 Github 账户的 ssh key，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>把刚刚拷贝出来的公钥粘贴到 key 中，title 放空就好，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证 ssh key：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
-<p>出现下面的语句说明你的 ssh key 已经配置好了：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi XXX! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
-<p>初始化本地 Git 仓库，设置 Git 的 user name 和 email：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"XXX"</span>（换成你的用户名）</span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"XXX"</span>（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
-<p>在本地的 hexo init 生成的文件夹中初始化 Git 仓库：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
-<p>将本地仓库和远程仓库连接（这一步骤可以不做）：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:your_github_user_name/your_github_user_name<span class="selector-class">.github</span><span class="selector-class">.io</span>.git(远程仓库ssh地址)</span><br></pre></td></tr></table></figure>
-<p>做完以上这些步骤，说明你的仓库可以使用 SSH 方式来上传下载代码，也不需要输入用户名和密码了。最后进行网站部署，如下：</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> hexo clean  <span class="comment">//清除缓存文件db.json和已生成的静态文件public</span></span><br><span class="line"><span class="symbol">$</span> hexo g   <span class="comment">//生成网站静态文件到默认设置的public文件夹</span></span><br><span class="line"><span class="symbol">$</span> hexo d   <span class="comment">//部署网站到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>部署成功后会提示：<br><img src="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这样你的 Hexo 博客就部署到了 Github page 上了！</p>
-<p><strong>至此，使用 Hexo+Github 搭建个人博客的整个过程及问题解决方法到此结束，关于对个人博客进行美化、设计等内容我将会再写一篇CSDN博客予以说明，各位小伙伴如果遇到问题请在评论区留言，我会及时回复帮助你解决！</strong></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
     <url>/2020/05/12/%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%97%B6GPU%E6%98%BE%E5%AD%98%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
     <content><![CDATA[<p><strong>前言</strong></p>
@@ -483,6 +422,67 @@
         <tag>GPU</tag>
         <tag>深度神经网络模型</tag>
         <tag>显存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手把手教你使用 Hexo+Github 搭建个人博客！</title>
+    <url>/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/</url>
+    <content><![CDATA[<p><strong>搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！</strong></p>
+<a id="more"></a>
+<p><strong>1. Hexo简介</strong><br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考链接：<br><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a></p>
+<p><strong>2. Hexo安装</strong><br>实验环境：Windows 10 64-bit。<br>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+<ul>
+<li>Node.js   (版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
+<li>Git</li>
+</ul>
+<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。<br><strong>2.1 安装 Node.js</strong><br>Node.js <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载稳定版本就可以。下载完成无特殊要求默认安装即可，一般不会出现问题。</p>
+<p><strong>2.2 安装 Git</strong><br>Git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载完成无特殊要求默认安装即可，一般不会出现问题。这里有一点需要<strong>注意</strong>的是，在下图这一步骤如果选择第一项，则安装完成后会出现：<br><strong>‘git’不是内部或外部命令，也不是可运行的程序或批处理文件</strong>错误，此时需要手动添加相关路径到系统环境变量中即可解决。</p>
+<p>具体为：<br><strong>C:\XXX\Git\bin<br>C:\XXX\Git\mingw64\libexec\git-core</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>检查 Node 跟 Git 版本：</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">v10.<span class="number">20.1</span></span><br><span class="line"></span><br><span class="line">$ git --<span class="keyword">version</span></span><br><span class="line">git <span class="keyword">version</span> <span class="number">2.25</span>.<span class="number">0</span>.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2.3 安装 Hexo</strong><br>Git 和 Node.js 都安装好后，接下来在<strong>本地</strong>安装 Hexo，为了避免安装失败，需要切换到阿里云的 NPM 镜像：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
+<p>创建一个用于存放博客文件的文件夹，如 /hexo/blog，然后进入 blog 文件夹全局安装并初始化 Hexo，右键选择 Git Bash Here ，弹出Git Bash窗口。执行命令：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>cnpm install -g hexo-cli</span><br><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
+<p>安装完成后，指定文件夹的目录如下：</p>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>其中_config.yml文件用于存放网站的配置信息，你可以在此配置大部分的参数；scaffolds是存放模板的文件夹，当新建文章时，Hexo会根据scaffold来建立文件；source是资源文件夹，用于存放用户资源，themes是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
+<p>在Git Bash终端执行命令，生成静态博客文件：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
+<p>Hexo 将 source 文件夹中的 Markdown 和 HTML 文件解析并放到 public 文件夹中，public 文件夹用于存放静态博客文件，相当于网站根目录。至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，如图所示：<br><img src="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3. 将 Hexo 部署到 GitHub</strong><br><strong>3.1 新建 Git 仓库</strong><br>仓库名必须为 username.github.io 格式，其中 username 是你 GitHub 的用户名。<br><img src="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>按照下图找到自己 Github 的用户名：<br><img src="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center" alt="在这里插入图片描述"><br><strong>3.2 部署</strong><br>快速在项目根目录下找到 _config.yml，找到 deploy 字段并填写完整。</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址</span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>这里<strong>注意</strong>，为了避免出现错误，我<strong>把 _config.yml 中的 Git 仓库链接改成了 SSH 链接，然后又给 Git 账户增加了 ssh key</strong>。</p>
+<p>具体方法如下：</p>
+<p>要使用自动部署首先要安装 hexo-deployer-git 工具：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>配置_config.yml中的deploy：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> <span class="attribute">type</span>: git</span><br><span class="line"> <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your_github_user_name/your_github_user_name.github.io.git</span><br><span class="line"> <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里的 repo 需要设置成你 Git 仓库的 SSH 链接。</strong></p>
+<p>命令行中输入：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C youremail（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>生成 ssh key。接着出现的一些步骤都可以回车跳过，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center" alt="在这里插入图片描述"><br>这样在 C/Users/Administrator/.ssh/id_rsa.pub 文件中就生成了公钥。打开 id_rsa.pub 文件将一整串公钥拷贝下来，进入你的 Github 账户设置，在 ssh and GPG keys 中新增一个 ssh key 配置 Github 账户的 ssh key，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>把刚刚拷贝出来的公钥粘贴到 key 中，title 放空就好，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证 ssh key：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
+<p>出现下面的语句说明你的 ssh key 已经配置好了：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi XXX! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
+<p>初始化本地 Git 仓库，设置 Git 的 user name 和 email：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"XXX"</span>（换成你的用户名）</span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"XXX"</span>（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>在本地的 hexo init 生成的文件夹中初始化 Git 仓库：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
+<p>将本地仓库和远程仓库连接（这一步骤可以不做）：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:your_github_user_name/your_github_user_name<span class="selector-class">.github</span><span class="selector-class">.io</span>.git(远程仓库ssh地址)</span><br></pre></td></tr></table></figure>
+<p>做完以上这些步骤，说明你的仓库可以使用 SSH 方式来上传下载代码，也不需要输入用户名和密码了。最后进行网站部署，如下：</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> hexo clean  <span class="comment">//清除缓存文件db.json和已生成的静态文件public</span></span><br><span class="line"><span class="symbol">$</span> hexo g   <span class="comment">//生成网站静态文件到默认设置的public文件夹</span></span><br><span class="line"><span class="symbol">$</span> hexo d   <span class="comment">//部署网站到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>部署成功后会提示：<br><img src="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这样你的 Hexo 博客就部署到了 Github page 上了！</p>
+<p><strong>至此，使用 Hexo+Github 搭建个人博客的整个过程及问题解决方法到此结束，关于对个人博客进行美化、设计等内容我将会再写一篇CSDN博客予以说明，各位小伙伴如果遇到问题请在评论区留言，我会及时回复帮助你解决！</strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
