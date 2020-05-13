@@ -22,11 +22,16 @@
 <img src="https://img-blog.csdnimg.cn/20200407124207109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>至此，TeXlive和TeXstudio的下载、安装配置及使用已经全部完成，各位小伙伴如果在安装配置过程中出现问题欢迎在评论区留言，我会及时回复。</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>TeXlive</tag>
+        <tag>TeXstudio</tag>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+      </tags>
   </entry>
   <entry>
     <title>Matlab编译安装MatConvnet流程及问题解决</title>
@@ -68,6 +73,18 @@
 <p>即可解决。</p>
 <p><strong>至此，使用Matlab编译安装MatConvnet的流程及在这个过程中遇到的问题和解决方法总结如上所示，请各位小伙伴认真对照修改，一定可以解决！如有问题请在评论区留言，我会及时回复！</strong></p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>MatConvnet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Pytorch中torchvision.datasets.ImageFolder报错：Found 0 files in subfolders of_XXX，完美解决！</title>
@@ -80,6 +97,13 @@
 <p><strong>3.总结</strong></p>
 <p>在平时进行实验时，虽然说对数据集的读取方面可能不会有太多问题，但是还是要认真细致一点，避免出现不必要的问题，这样也能提高工作的效率。</p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>torchvision</tag>
+      </tags>
   </entry>
   <entry>
     <title>TensorLy-神经网络张量库</title>
@@ -97,6 +121,14 @@
 </ul>
 <p><strong>3.安装TensorLy</strong><br>        唯一的前提条件是必须安装Python 3。最简单的方法是通过Anaconda安装。<br>| With pip (recommended) | With conda |<br>|-pip install -U tensorly-|-conda install -c tensorly tensorly-|<br>注意：TensorLy默认情况下取决于NumPy。如果要使用MXNet或PyTorch后端，则需要单独安装这些软件包。</p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>TensorLy</tag>
+        <tag>神经网络</tag>
+        <tag>张量</tag>
+      </tags>
   </entry>
   <entry>
     <title>cFosSpeed简介、下载安装、注册及配置教程</title>
@@ -112,16 +144,14 @@
 <p> <strong>4. 如果你反复测试还是无法提高校准度的话，那就得手动打开控制台配置参数了，选择流量调整-打开 cFosSpeed 控制台。</strong><br><img src="https://img-blog.csdnimg.cn/20200414141334683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> 5. 官网给出了详细的配置教程，感兴趣的同学可以自己摸索。<br><strong>链接：<a href="http://www.cfosspeed.de/zh-cn/traffic-shaping/speed-guide.htm" target="_blank" rel="noopener">http://www.cfosspeed.de/zh-cn/traffic-shaping/speed-guide.htm</a></strong><br><strong>按照我自己测试的情况来看，基本上只要你可以测出正常数值，反复多重复几次，基本就可以提高校准度。校准完成后，找一个可以满速下载的文件做测试，看看ping值是否还是保持很低。</strong><br><img src="https://img-blog.csdnimg.cn/20200414141548849.png#pic_center" alt="在这里插入图片描述"><br>上面这个截图就是我在优化之后，在满速下载的网络状态，那个白色数字2就是ping值，ping值越小则说明延迟越小，从数值可见，这个优化效果相当不错。</p>
 <p><strong>七、总结</strong><br>说实话，这个软件我也是按照官网的说明，同时结合cFosSpeed贴吧的教程慢慢摸索的，全部功能还没有完全摸透。不过由于<strong>免费注册的截止时间目前为2020年4月20日</strong>，发邮件申请也需要时间，为了不影响大家及时领取，就赶紧把软件介绍出来，建议大家先领了正版然后再慢慢摸索。根据我实际使用效果测试，网络环境确实有改善，所以还是值得折腾的。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
-    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
-    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
-<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
-<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
-<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
-<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
-]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>cFosSpeed</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -142,6 +172,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
+    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
+<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
+<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
+<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
+<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>Ananconda</tag>
+        <tag>torch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
     <url>/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
     <content><![CDATA[<p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
@@ -150,6 +198,13 @@
 <p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
 <p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>scikit-learn</tag>
+        <tag>朴素贝叶斯</tag>
+      </tags>
   </entry>
   <entry>
     <title>sklearn-SVM：数据归一化及模型调参</title>
@@ -162,6 +217,15 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV  <span class="comment"># 在sklearn中主要是使用GridSearchCV调参</span></span><br><span class="line"></span><br><span class="line">svc_model = svm.SVC(kernel=<span class="string">'rbf'</span>)</span><br><span class="line">param_grid = &#123;<span class="string">'C'</span>: [<span class="number">1e-3</span>, <span class="number">1e-2</span>, <span class="number">1e-1</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">100</span>, <span class="number">1000</span>], <span class="string">'gamma'</span>: [<span class="number">0.001</span>, <span class="number">0.0001</span>]&#125;  <span class="comment"># param_grid:我们要调参数的列表(带有参数名称作为键的字典)，此处共有14种超参数的组合来进行网格搜索，进而选择一个拟合分数最好的超平面系数。</span></span><br><span class="line">grid_search = GridSearchCV(svc_model, param_grid, n_jobs=<span class="number">8</span>, verbose=<span class="number">1</span>)  <span class="comment"># n_jobs:并行数，int类型。(-1：跟CPU核数一致；1:默认值)；verbose:日志冗长度。默认为0：不输出训练过程；1：偶尔输出；&gt;1：对每个子模型都输出。</span></span><br><span class="line">grid_search.fit(x_train_data, y_train_data.ravel())  <span class="comment"># 训练，默认使用5折交叉验证</span></span><br><span class="line">best_parameters = grid_search.best_estimator_.get_params()  <span class="comment"># 获取最佳模型中的最佳参数</span></span><br><span class="line">print(<span class="string">"cv results are"</span> % grid_search.best_params_, grid_search.cv_results_)  <span class="comment"># grid_search.cv_results_:给出不同参数情况下的评价结果。</span></span><br><span class="line">print(<span class="string">"best parameters are"</span> % grid_search.best_params_, grid_search.best_params_)  <span class="comment"># grid_search.best_params_:已取得最佳结果的参数的组合；</span></span><br><span class="line">print(<span class="string">"best score are"</span> % grid_search.best_params_, grid_search.best_score_)  <span class="comment"># grid_search.best_score_:优化过程期间观察到的最好的评分。</span></span><br><span class="line"><span class="comment"># for para, val in list(best_parameters.items()):</span></span><br><span class="line"><span class="comment">#     print(para, val)</span></span><br><span class="line">svm_model = svm.SVC(kernel=<span class="string">'rbf'</span>, C=best_parameters[<span class="string">'C'</span>], gamma=best_parameters[<span class="string">'gamma'</span>])  <span class="comment"># 最佳模型</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>sklearn</tag>
+        <tag>SVM</tag>
+        <tag>数据归一化</tag>
+        <tag>模型调参</tag>
+      </tags>
   </entry>
   <entry>
     <title>visdom安装及报错解决方案</title>
@@ -173,6 +237,14 @@
 <p><strong>1.报错提示：缺少相关包文件</strong><br>        在命令行执行”conda install XXX”命令安装对应的包文件，然后重新执行”python -m visdom.server”即可解决。</p>
 <p><strong>2.浏览器窗口蓝屏，无法显示窗体等相关组件。</strong><br>        这个错误产生的原因是由于visdom服务在首次启动时需要联网（包括外网）下载一些运行所需的文件，如js、css、fonts等。虽然说新版本（0.1.8.9+）已经解决了无法下载的问题，但是还存在下载速度慢、防火墙限制等问题，因此下载过程十分漫长还极易出错，因此本人在此分享visdom服务所需的相关文件，请有需要的童鞋下载并覆盖。<br>        本人visdom/static文件夹路径为：”D:\Software\Anaconda\Anaconda3\envs\pytorch\Lib\site-packages\visdom\static”，请对照自行修改路径进行覆盖。<br>        static文件夹下所包括的文件及文件夹结构如下图：<br>        <img src="https://img-blog.csdnimg.cn/20200401120724663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="static文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120748397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="css文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120803816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="fonts文件夹"><br>        <img src="https://img-blog.csdnimg.cn/20200401120817433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="js文件夹"></p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>visdom</tag>
+        <tag>python</tag>
+        <tag>conda</tag>
+      </tags>
   </entry>
   <entry>
     <title>一步步带你免费使用Tesla K80 GPU！</title>
@@ -220,66 +292,13 @@
 <figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line">!cat /<span class="meta">proc</span>/cpuinfo</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/2020050915463685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>8.总结</strong><br><strong>好好学习，认真薅毛。温馨提示：自备梯子。各位小伙伴快去体验吧！欢迎在评论区留言提问。</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>手把手教你使用 Hexo+Github 搭建个人博客！</title>
-    <url>/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/</url>
-    <content><![CDATA[<p><strong>搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！</strong></p>
-<a id="more"></a>
-<p><strong>1. Hexo简介</strong><br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考链接：<br><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a></p>
-<p><strong>2. Hexo安装</strong><br>实验环境：Windows 10 64-bit。<br>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
-<ul>
-<li>Node.js   (版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
-<li>Git</li>
-</ul>
-<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。<br><strong>2.1 安装 Node.js</strong><br>Node.js <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载稳定版本就可以。下载完成无特殊要求默认安装即可，一般不会出现问题。</p>
-<p><strong>2.2 安装 Git</strong><br>Git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载完成无特殊要求默认安装即可，一般不会出现问题。这里有一点需要<strong>注意</strong>的是，在下图这一步骤如果选择第一项，则安装完成后会出现：<br><strong>‘git’不是内部或外部命令，也不是可运行的程序或批处理文件</strong>错误，此时需要手动添加相关路径到系统环境变量中即可解决。</p>
-<p>具体为：<br><strong>C:\XXX\Git\bin<br>C:\XXX\Git\mingw64\libexec\git-core</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>检查 Node 跟 Git 版本：</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">v10.<span class="number">20.1</span></span><br><span class="line"></span><br><span class="line">$ git --<span class="keyword">version</span></span><br><span class="line">git <span class="keyword">version</span> <span class="number">2.25</span>.<span class="number">0</span>.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2.3 安装 Hexo</strong><br>Git 和 Node.js 都安装好后，接下来在<strong>本地</strong>安装 Hexo，为了避免安装失败，需要切换到阿里云的 NPM 镜像：</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
-<p>创建一个用于存放博客文件的文件夹，如 /hexo/blog，然后进入 blog 文件夹全局安装并初始化 Hexo，右键选择 Git Bash Here ，弹出Git Bash窗口。执行命令：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>cnpm install -g hexo-cli</span><br><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
-<p>安装完成后，指定文件夹的目录如下：</p>
-<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-<p>其中_config.yml文件用于存放网站的配置信息，你可以在此配置大部分的参数；scaffolds是存放模板的文件夹，当新建文章时，Hexo会根据scaffold来建立文件；source是资源文件夹，用于存放用户资源，themes是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
-<p>在Git Bash终端执行命令，生成静态博客文件：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
-<p>Hexo 将 source 文件夹中的 Markdown 和 HTML 文件解析并放到 public 文件夹中，public 文件夹用于存放静态博客文件，相当于网站根目录。至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，如图所示：<br><img src="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3. 将 Hexo 部署到 GitHub</strong><br><strong>3.1 新建 Git 仓库</strong><br>仓库名必须为 username.github.io 格式，其中 username 是你 GitHub 的用户名。<br><img src="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>按照下图找到自己 Github 的用户名：<br><img src="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center" alt="在这里插入图片描述"><br><strong>3.2 部署</strong><br>快速在项目根目录下找到 _config.yml，找到 deploy 字段并填写完整。</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址</span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
-<p>这里<strong>注意</strong>，为了避免出现错误，我<strong>把 _config.yml 中的 Git 仓库链接改成了 SSH 链接，然后又给 Git 账户增加了 ssh key</strong>。</p>
-<p>具体方法如下：</p>
-<p>要使用自动部署首先要安装 hexo-deployer-git 工具：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<p>配置_config.yml中的deploy：</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> <span class="attribute">type</span>: git</span><br><span class="line"> <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your_github_user_name/your_github_user_name.github.io.git</span><br><span class="line"> <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
-<p><strong>注意：这里的 repo 需要设置成你 Git 仓库的 SSH 链接。</strong></p>
-<p>命令行中输入：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C youremail（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
-<p>生成 ssh key。接着出现的一些步骤都可以回车跳过，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center" alt="在这里插入图片描述"><br>这样在 C/Users/Administrator/.ssh/id_rsa.pub 文件中就生成了公钥。打开 id_rsa.pub 文件将一整串公钥拷贝下来，进入你的 Github 账户设置，在 ssh and GPG keys 中新增一个 ssh key 配置 Github 账户的 ssh key，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>把刚刚拷贝出来的公钥粘贴到 key 中，title 放空就好，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证 ssh key：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
-<p>出现下面的语句说明你的 ssh key 已经配置好了：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi XXX! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
-<p>初始化本地 Git 仓库，设置 Git 的 user name 和 email：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"XXX"</span>（换成你的用户名）</span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"XXX"</span>（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
-<p>在本地的 hexo init 生成的文件夹中初始化 Git 仓库：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
-<p>将本地仓库和远程仓库连接（这一步骤可以不做）：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:your_github_user_name/your_github_user_name<span class="selector-class">.github</span><span class="selector-class">.io</span>.git(远程仓库ssh地址)</span><br></pre></td></tr></table></figure>
-<p>做完以上这些步骤，说明你的仓库可以使用 SSH 方式来上传下载代码，也不需要输入用户名和密码了。最后进行网站部署，如下：</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> hexo clean  <span class="comment">//清除缓存文件db.json和已生成的静态文件public</span></span><br><span class="line"><span class="symbol">$</span> hexo g   <span class="comment">//生成网站静态文件到默认设置的public文件夹</span></span><br><span class="line"><span class="symbol">$</span> hexo d   <span class="comment">//部署网站到设定的仓库</span></span><br></pre></td></tr></table></figure>
-<p>部署成功后会提示：<br><img src="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这样你的 Hexo 博客就部署到了 Github page 上了！</p>
-<p><strong>至此，使用 Hexo+Github 搭建个人博客的整个过程及问题解决方法到此结束，关于对个人博客进行美化、设计等内容我将会再写一篇CSDN博客予以说明，各位小伙伴如果遇到问题请在评论区留言，我会及时回复帮助你解决！</strong></p>
-]]></content>
       <categories>
-        <category>工具</category>
-        <category>hexo</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>hexo</tag>
+        <tag>GPU</tag>
+        <tag>Tesla K80</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -304,6 +323,13 @@
 <p>未来能刨的坑还有很多！</p>
 <p>以上转载自博客 <a href="https://blog.csdn.net/sinat_38856440/article/details/104450094/" target="_blank" rel="noopener">link</a>.</p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>神经网络</tag>
+        <tag>张量化</tag>
+      </tags>
   </entry>
   <entry>
     <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
@@ -389,6 +415,75 @@
 <p>[5]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/from-zero-to-research-an-introduction-to-meta-learning-8e16e677f78a">From zero to research — An introduction to Meta-learning</a></p>
 <p>[6]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/training-larger-batches-practical-tips-on-1-gpu-multi-gpu-distributed-setups-ec88c3e51255">Training Neural Nets on Larger Batches: Practical Tips for 1-GPU, Multi-GPU &amp; Distributed setups</a></p>
 ]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>GPU</tag>
+        <tag>深度神经网络模型</tag>
+        <tag>显存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手把手教你使用 Hexo+Github 搭建个人博客！</title>
+    <url>/2020/05/12/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8%20Hexo+Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%81/</url>
+    <content><![CDATA[<p><strong>搭建自己的技术博客有很多种技术方案，我知道的有 Hexo, jeklly, vuepress  等。在此我通过使用 Hexo 并结合 Github 手把手教大家搭建自己的个人博客。让我们一起来看看吧！</strong></p>
+<a id="more"></a>
+<p><strong>1. Hexo简介</strong><br>Hexo 是一款基于 Node.js 的静态博客框架。Hexo 使用 Markdown 解析文章，用户在本地安装Hexo并进行写作，通过一条命令，Hexo即可利用靓丽的主题自动生成静态网页。<br>参考链接：<br><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo-Github地址</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo帮助文档</a></p>
+<p><strong>2. Hexo安装</strong><br>实验环境：Windows 10 64-bit。<br>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
+<ul>
+<li>Node.js   (版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本)</li>
+<li>Git</li>
+</ul>
+<p>如果你的电脑中尚未安装所需要的程序，请根据以下安装指示完成安装。<br><strong>2.1 安装 Node.js</strong><br>Node.js <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145301642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载稳定版本就可以。下载完成无特殊要求默认安装即可，一般不会出现问题。</p>
+<p><strong>2.2 安装 Git</strong><br>Git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a><br><img src="https://img-blog.csdnimg.cn/20200512145907784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>下载完成无特殊要求默认安装即可，一般不会出现问题。这里有一点需要<strong>注意</strong>的是，在下图这一步骤如果选择第一项，则安装完成后会出现：<br><strong>‘git’不是内部或外部命令，也不是可运行的程序或批处理文件</strong>错误，此时需要手动添加相关路径到系统环境变量中即可解决。</p>
+<p>具体为：<br><strong>C:\XXX\Git\bin<br>C:\XXX\Git\mingw64\libexec\git-core</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200512150159674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>检查 Node 跟 Git 版本：</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">v10.<span class="number">20.1</span></span><br><span class="line"></span><br><span class="line">$ git --<span class="keyword">version</span></span><br><span class="line">git <span class="keyword">version</span> <span class="number">2.25</span>.<span class="number">0</span>.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2.3 安装 Hexo</strong><br>Git 和 Node.js 都安装好后，接下来在<strong>本地</strong>安装 Hexo，为了避免安装失败，需要切换到阿里云的 NPM 镜像：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https://registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
+<p>创建一个用于存放博客文件的文件夹，如 /hexo/blog，然后进入 blog 文件夹全局安装并初始化 Hexo，右键选择 Git Bash Here ，弹出Git Bash窗口。执行命令：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>cnpm install -g hexo-cli</span><br><span class="line"><span class="variable">$ </span>hexo init</span><br></pre></td></tr></table></figure>
+<p>安装完成后，指定文件夹的目录如下：</p>
+<figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line">├── <span class="variable">_config</span>.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── <span class="variable">_drafts</span></span><br><span class="line">|   └── <span class="variable">_posts</span></span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>其中_config.yml文件用于存放网站的配置信息，你可以在此配置大部分的参数；scaffolds是存放模板的文件夹，当新建文章时，Hexo会根据scaffold来建立文件；source是资源文件夹，用于存放用户资源，themes是主题文件夹，存放博客主题，Hexo 会根据主题来生成静态页面。</p>
+<p>在Git Bash终端执行命令，生成静态博客文件：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
+<p>Hexo 将 source 文件夹中的 Markdown 和 HTML 文件解析并放到 public 文件夹中，public 文件夹用于存放静态博客文件，相当于网站根目录。至此博客雏形基本完成，在浏览器中访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，如图所示：<br><img src="https://img-blog.csdnimg.cn/20200512151954561.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3. 将 Hexo 部署到 GitHub</strong><br><strong>3.1 新建 Git 仓库</strong><br>仓库名必须为 username.github.io 格式，其中 username 是你 GitHub 的用户名。<br><img src="https://img-blog.csdnimg.cn/20200512152321289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>按照下图找到自己 Github 的用户名：<br><img src="https://img-blog.csdnimg.cn/20200512152354393.png#pic_center" alt="在这里插入图片描述"><br><strong>3.2 部署</strong><br>快速在项目根目录下找到 _config.yml，找到 deploy 字段并填写完整。</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">  type:</span> git</span><br><span class="line"><span class="symbol">  repo:</span> 你的仓库地址</span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>这里<strong>注意</strong>，为了避免出现错误，我<strong>把 _config.yml 中的 Git 仓库链接改成了 SSH 链接，然后又给 Git 账户增加了 ssh key</strong>。</p>
+<p>具体方法如下：</p>
+<p>要使用自动部署首先要安装 hexo-deployer-git 工具：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>配置_config.yml中的deploy：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line"> <span class="attribute">type</span>: git</span><br><span class="line"> <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:your_github_user_name/your_github_user_name.github.io.git</span><br><span class="line"> <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里的 repo 需要设置成你 Git 仓库的 SSH 链接。</strong></p>
+<p>命令行中输入：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C youremail（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>生成 ssh key。接着出现的一些步骤都可以回车跳过，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153309168.png#pic_center" alt="在这里插入图片描述"><br>这样在 C/Users/Administrator/.ssh/id_rsa.pub 文件中就生成了公钥。打开 id_rsa.pub 文件将一整串公钥拷贝下来，进入你的 Github 账户设置，在 ssh and GPG keys 中新增一个 ssh key 配置 Github 账户的 ssh key，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153648309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>把刚刚拷贝出来的公钥粘贴到 key 中，title 放空就好，如下图：<br><img src="https://img-blog.csdnimg.cn/20200512153810932.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证 ssh key：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
+<p>出现下面的语句说明你的 ssh key 已经配置好了：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Hi XXX! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
+<p>初始化本地 Git 仓库，设置 Git 的 user name 和 email：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"XXX"</span>（换成你的用户名）</span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"XXX"</span>（换成你的邮箱地址）</span><br></pre></td></tr></table></figure>
+<p>在本地的 hexo init 生成的文件夹中初始化 Git 仓库：</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
+<p>将本地仓库和远程仓库连接（这一步骤可以不做）：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:your_github_user_name/your_github_user_name<span class="selector-class">.github</span><span class="selector-class">.io</span>.git(远程仓库ssh地址)</span><br></pre></td></tr></table></figure>
+<p>做完以上这些步骤，说明你的仓库可以使用 SSH 方式来上传下载代码，也不需要输入用户名和密码了。最后进行网站部署，如下：</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> hexo clean  <span class="comment">//清除缓存文件db.json和已生成的静态文件public</span></span><br><span class="line"><span class="symbol">$</span> hexo g   <span class="comment">//生成网站静态文件到默认设置的public文件夹</span></span><br><span class="line"><span class="symbol">$</span> hexo d   <span class="comment">//部署网站到设定的仓库</span></span><br></pre></td></tr></table></figure>
+<p>部署成功后会提示：<br><img src="https://img-blog.csdnimg.cn/2020051215454567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这样你的 Hexo 博客就部署到了 Github page 上了！</p>
+<p><strong>至此，使用 Hexo+Github 搭建个人博客的整个过程及问题解决方法到此结束，关于对个人博客进行美化、设计等内容我将会再写一篇CSDN博客予以说明，各位小伙伴如果遇到问题请在评论区留言，我会及时回复帮助你解决！</strong></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
   </entry>
   <entry>
     <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
@@ -420,6 +515,15 @@
 </ul>
 <p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
 ]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>Ventoy</tag>
+        <tag>开源</tag>
+      </tags>
   </entry>
   <entry>
     <title>直接调节风扇转速的Windows开源工具--Open Hardware Monitor</title>
@@ -432,5 +536,14 @@
 <p>Open Hardware Monitor 支持 32/64 位的 Windows XP / Vista / 7 / 7 / 8 / 8 / 8.1 / 10，以及其他 x86 的 Linux 操作系统，免安装。</p>
 <p>Open Hardware Monitor <a href="https://openhardwaremonitor.org/" target="_blank" rel="noopener">官网</a>，在 GitHub 开源。<br>国内搬运下载<a href="https://tc5.us/file/15690961-440806741" target="_blank" rel="noopener">地址</a></p>
 ]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>开源</tag>
+        <tag>Open Hardware Monitor</tag>
+      </tags>
   </entry>
 </search>
