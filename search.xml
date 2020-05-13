@@ -34,11 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Matlab编译安装MatConvnet流程及问题解决</title>
     <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
@@ -104,6 +99,11 @@
         <tag>Pytorch</tag>
         <tag>torchvision</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>TensorLy-神经网络张量库</title>
@@ -186,6 +186,24 @@
       <tags>
         <tag>scikit-learn</tag>
         <tag>朴素贝叶斯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
+    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
+<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
+<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
+<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
+<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>Ananconda</tag>
+        <tag>torch</tag>
       </tags>
   </entry>
   <entry>
@@ -284,24 +302,6 @@
       </tags>
   </entry>
   <entry>
-    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
-    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
-    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
-<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
-<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
-<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
-<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>Ananconda</tag>
-        <tag>torch</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>张量化网络论文汇总（2015年-2020年）</title>
     <url>/2020/05/12/%E5%BC%A0%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C%E8%AE%BA%E6%96%87%E6%B1%87%E6%80%BB%EF%BC%882015%E5%B9%B4-2020%E5%B9%B4%EF%BC%89/</url>
     <content><![CDATA[<p><strong>用张量分解的方法压缩神经网络模型这一方向还有哪些坑可以挖呢？这是我研究生以来一直研究的问题。看了很多论文，感觉大体可以分为两条line:</strong></p>
@@ -390,46 +390,6 @@
         <tag>博客</tag>
         <tag>Hexo</tag>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
-    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
-    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
-<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
-<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
-<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
-<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
-<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
-<p><strong>6.Ventoy 特点列表</strong></p>
-<ul>
-<li>开源、易用</li>
-<li>快速 （拷贝文件有多快就有多快）</li>
-<li>直接从 ISO 文件启动，无需解开</li>
-<li>无差异支持 Legacy + UEFI 模式</li>
-<li>UEFI 模式支持安全启动 （Secure Boot）</li>
-<li>支持超过 4GB 的 ISO 文件</li>
-<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
-<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
-<li>不仅仅是启动，而是完整的安装过程</li>
-<li>提出 “Ventoy Compatible” 概念</li>
-<li>支持插件扩展</li>
-<li>启动过程中支持 U 盘设置写保护</li>
-<li>不影响 U 盘日常普通使用</li>
-<li>版本升级时数据不会丢失</li>
-<li>无需跟随操作系统升级而升级 Ventoy</li>
-</ul>
-<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
-]]></content>
-      <categories>
-        <category>Windows软件</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>工具</tag>
-        <tag>Ventoy</tag>
-        <tag>开源</tag>
       </tags>
   </entry>
   <entry>
@@ -523,6 +483,46 @@
         <tag>GPU</tag>
         <tag>深度神经网络模型</tag>
         <tag>显存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
+    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
+    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
+<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
+<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
+<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
+<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
+<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
+<p><strong>6.Ventoy 特点列表</strong></p>
+<ul>
+<li>开源、易用</li>
+<li>快速 （拷贝文件有多快就有多快）</li>
+<li>直接从 ISO 文件启动，无需解开</li>
+<li>无差异支持 Legacy + UEFI 模式</li>
+<li>UEFI 模式支持安全启动 （Secure Boot）</li>
+<li>支持超过 4GB 的 ISO 文件</li>
+<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
+<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
+<li>不仅仅是启动，而是完整的安装过程</li>
+<li>提出 “Ventoy Compatible” 概念</li>
+<li>支持插件扩展</li>
+<li>启动过程中支持 U 盘设置写保护</li>
+<li>不影响 U 盘日常普通使用</li>
+<li>版本升级时数据不会丢失</li>
+<li>无需跟随操作系统升级而升级 Ventoy</li>
+</ul>
+<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
+]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>Ventoy</tag>
+        <tag>开源</tag>
       </tags>
   </entry>
   <entry>
