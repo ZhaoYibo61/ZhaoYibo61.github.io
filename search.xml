@@ -34,6 +34,11 @@
       </tags>
   </entry>
   <entry>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Matlab编译安装MatConvnet流程及问题解决</title>
     <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
@@ -80,11 +85,6 @@
         <tag>Matlab</tag>
         <tag>MatConvnet</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Pytorch中torchvision.datasets.ImageFolder报错：Found 0 files in subfolders of_XXX，完美解决！</title>
@@ -170,24 +170,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
-    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
-    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
-<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
-<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
-<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
-<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>Ananconda</tag>
-        <tag>torch</tag>
-      </tags>
   </entry>
   <entry>
     <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
@@ -302,6 +284,24 @@
       </tags>
   </entry>
   <entry>
+    <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
+    <url>/2020/05/12/import%20torch%E6%8A%A5%E9%94%99%EF%BC%9Afrom%20torch._C%20import%20_%20ImportError_%20DLL%20load%20failed_%20%E6%89%BE%E4%B8%8D%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
+    <content><![CDATA[<h2 id="import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！"><a href="#import-torch报错：from-torch-C-import-ImportError-DLL-load-failed-找不到指定的程序，完美解决！" class="headerlink" title="import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！"></a><strong>import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序，完美解决！</strong></h2><p> <strong>1. 问题描述</strong><br>        昨天刚收到新买的笔记本电脑，就迫不及待的着手安装Pytorch。首先安装了Ananconda一切顺利，但是当我用conda命令安装完pytorch，在命令行输入”import torch”后发现报错，错误提示为：“import torch报错：from torch._C import * ImportError: DLL load failed: 找不到指定的程序”。</p>
+<p> <strong>2. 解决方法</strong><br>        查阅了一些资料后发现是Anaconda下pytorch虚拟环境中python版本的问题，我安装的pytorch版本为1.2.0，而python版本为3.0.0（使用conda命令创建虚拟环境时默认的python版本）。于是我使用conda命令：“conda install python”（会根据自己的环境配置自动选择对应版本）将python版本更新为python=3.6.10，成功解决问题。</p>
+<p><strong>3.截图</strong><br><img src="https://img-blog.csdnimg.cn/20200331171141129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="python和pytorch版本"><br><img src="https://img-blog.csdnimg.cn/20200331171315581.png#pic_center" alt="import torch成功执行"><br>        问题完美解决！</p>
+<p><strong>4.总结</strong><br>        类似于上述问题的问题有很多，这个时候就要考虑一下是不是因为各个包之间版本不匹配的问题，有时就能很快解决问题！</p>
+<p><strong>这是我在CSDN上写的第一篇博客，欢迎大家批评指正，多多关注！</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>Ananconda</tag>
+        <tag>torch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>张量化网络论文汇总（2015年-2020年）</title>
     <url>/2020/05/12/%E5%BC%A0%E9%87%8F%E5%8C%96%E7%BD%91%E7%BB%9C%E8%AE%BA%E6%96%87%E6%B1%87%E6%80%BB%EF%BC%882015%E5%B9%B4-2020%E5%B9%B4%EF%BC%89/</url>
     <content><![CDATA[<p><strong>用张量分解的方法压缩神经网络模型这一方向还有哪些坑可以挖呢？这是我研究生以来一直研究的问题。看了很多论文，感觉大体可以分为两条line:</strong></p>
@@ -329,99 +329,6 @@
       <tags>
         <tag>神经网络</tag>
         <tag>张量化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
-    <url>/2020/05/12/%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%97%B6GPU%E6%98%BE%E5%AD%98%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
-    <content><![CDATA[<p><strong>前言</strong></p>
-<p>最近跑的模型都比较大，尤其是Bert， 这真的是难为我 1080ti 了， 在Bert的Example中，官方提供了一些 Trick 来帮助我们加速训练，很良心， 但感觉还不够，于是花费一些时间整理出一个 Trick 集合，来帮助我们在显存不足的时候来嘿嘿嘿。</p>
-<p>本文分为两大部分，第一部分引入一个主题：如何估计模型所需显存， 第二个主题：GPU显存不足时的各种 Trick 。</p>
-<p><strong>监控 GPU</strong></p>
-<p>监控GPU最常用的当然是 nvidia-smi ，但有一个工具能够更好的展示信息：gpustat 。</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">nvidia<span class="literal">-smi</span></span><br><span class="line">watch -<span class="literal">-color</span> <span class="literal">-n1</span> gpustat <span class="literal">-cpu</span>   <span class="comment"># 动态事实监控GPU</span></span><br></pre></td></tr></table></figure>
-<p>推荐在配置文件中配置别名，反正我每次 gpu 一下，信息就全出来了，很方便。</p>
-<p>下面有同学推荐nvtop， 我简单试了试，的确挺好的，展现出现的信息很丰富 ， 推荐试一试。</p>
-<p><strong>如何估计模型显存 [1]</strong><br>首先，思考一个问题： 模型中的哪些东西占据了我的显存，咋就动不动就 out of memory？</p>
-<p>其实一个模型所占用的显存主要包含两部分： <strong>模型自身的参数， 优化器参数， 模型每层的输入输出。</strong></p>
-<p>模型自身参数</p>
-<p>模型自身的参数指的就是各个网络层的 Weight 和Bias，这部分显存在模型加载完成之后就会被占用， 注意到的是，有些层是有参数的，如CNN， RNN； 而有些层是无参数的， 如激活层， 池化层等。</p>
-<p>从Pytorch 的角度来说，当你执行 model.to(device) 是， 你的模型就加载完毕，此时你的模型就已经加载完成了。</p>
-<p>对于Pytorch来说，模型参数存储在 model.parameters() 中，因此，我们不需要自己计算，完全可以通过Pytorh来直接打印：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Model &#123;&#125; : params: &#123;:4f&#125;M'</span>.format(model._get_name()， para * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
-<p><strong>优化器参数</strong></p>
-<p>优化器参数指的是模型在优化过程即反向传播中所产生的参数， 这部分参数主要指的就是 dw， 即梯度，在SGD中， 其大小与参数一样， 因此在优化期间， 模型的参数所占用的显存会翻倍。</p>
-<p>值得注意的是，不同的优化器其所需保存的优化参数不同， 对于 Adam， 由于其还需要保存其余参数， 模型的参数量会在优化区间翻 4 倍。</p>
-<p><strong>模型每层的输入输出</strong></p>
-<p><strong>首先</strong>，第一点是输入数据所占用的显存， 这部分所占用的显存其实并不大，这是因为我们往往采用迭代器的方式读取数据，这意味着我们其实并不是一次性的将所有数据读入显存，而这保证每次输入所占用的显存与整个网络参数来比是微不足道的。</p>
-<p><strong>然后</strong>，在模型进行前向传播与反向传播时， 一个很重要的事情就是计算并保存每一层的输出以及其对应的梯度， 这意味着，这也占据了很大一部分显存。</p>
-<p><strong>最后</strong>， 模型输出的显存占用可以总结为：</p>
-<ul>
-<li>每一层的输出(多维数组)， 其对应的梯度， 值得注意的是，模型输出不需要存储相应的动量信息（即此处如果使用Adam， 模型输出的参数量依旧是2倍而不是4倍， 我也不知道为啥？？求大佬指教）</li>
-<li>输出的显存占用与 batch size 成正比</li>
-</ul>
-<p>那么有没有办法通过Pytorch来计算这部分参数量呢？ 答案是有的，我们可以假设一个batch的样本，然后通过 model.modules() 来对每一层进行遍历，获得每一层的输出shape， 然后就能够获得一个batch的数据的输出参数量。[2]</p>
-<p><strong>所有的显存占用计算</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">显存占用 &#x3D; 模型自身参数 × n + batch size × 输出参数量 × 2 + 一个batch的输入数据（往往忽略）</span><br></pre></td></tr></table></figure>
-
-<p>其中，n是根据优化算法来定的，如果选用SGD， 则 n = 2， 如果选择Adam， 则 n = 4.</p>
-<p>一个很棒的实现如下， 我懒得再重新写了，你可以根据这个改一改，问题不大。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 模型显存占用监测函数</span></span><br><span class="line"><span class="comment"># model：输入的模型</span></span><br><span class="line"><span class="comment"># input：实际中需要输入的Tensor变量</span></span><br><span class="line"><span class="comment"># type_size 默认为 4 默认类型为 float32 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modelsize</span><span class="params">(model, input, type_size=<span class="number">4</span>)</span>:</span></span><br><span class="line">    para = sum([np.prod(list(p.size())) <span class="keyword">for</span> p <span class="keyword">in</span> model.parameters()])</span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : params: &#123;:4f&#125;M'</span>.format(model._get_name(), para * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br><span class="line"> </span><br><span class="line">    input_ = input.clone()</span><br><span class="line">    input_.requires_grad_(requires_grad=<span class="literal">False</span>)</span><br><span class="line"> </span><br><span class="line">    mods = list(model.modules())</span><br><span class="line">    out_sizes = []</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(mods)):</span><br><span class="line">        m = mods[i]</span><br><span class="line">        <span class="keyword">if</span> isinstance(m, nn.ReLU):</span><br><span class="line">            <span class="keyword">if</span> m.inplace:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        out = m(input_)</span><br><span class="line">        out_sizes.append(np.array(out.size()))</span><br><span class="line">        input_ = out</span><br><span class="line"> </span><br><span class="line">    total_nums = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(out_sizes)):</span><br><span class="line">        s = out_sizes[i]</span><br><span class="line">        nums = np.prod(np.array(s))</span><br><span class="line">        total_nums += nums</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : intermedite variables: &#123;:3f&#125; M (without backward)'</span></span><br><span class="line">          .format(model._get_name(), total_nums * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : intermedite variables: &#123;:3f&#125; M (with backward)'</span></span><br><span class="line">          .format(model._get_name(), total_nums * type_size*<span class="number">2</span> / <span class="number">1000</span> / <span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
-<p><strong>GPU 显存不足时的Trick [2]</strong></p>
-<p>此处不讨论多GPU， 分布式计算等情况，只讨论一些常规的 Trick， 会不定时进行更新。</p>
-<p><strong>降低batch size</strong></p>
-<p>这应该很好理解，适当降低batch size， 则模型每层的输入输出就会成线性减少， 效果相当明显。这里需要注意的一点是, dev batch size 的调整也有助于降低显存, 同时,不要将 dev 或 test 的batch size 设置为样本集长度, 我最近就干了这个傻事，害的我调试了一天才调出来是这个问题。</p>
-<p><strong>选择更小的数据类型</strong></p>
-<p>一般默认情况下， 整个网络中采用的是32位的浮点数，如果切换到 16位的浮点数，其显存占用量将接近呈倍数递减。</p>
-<p><strong>精简模型</strong></p>
-<p>在设计模型时，适当的精简模型，如原来两层的LSTM转为一层； 原来使用LSTM， 现在使用GRU； 减少卷积核数量； 尽量少的使用 Linear 等。</p>
-<p><strong>数据角度</strong></p>
-<p>对于文本数据来说，长序列所带来的参数量是呈线性增加的， 适当的缩小序列长度可以极大的降低参数量。</p>
-<p><strong>total_loss</strong></p>
-<p>考虑到 loss 本身是一个包含梯度信息的 tensor， 因此，正确的求损失和的方式为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">total_loss +&#x3D; loss.item()</span><br></pre></td></tr></table></figure>
-
-<p><strong>释放不需要的张量和变量</strong></p>
-<p>采用del释放你不再需要的张量和变量，这也要求我们在写模型的时候注意变量的使用，不要随心所欲，漫天飞舞。</p>
-<p><strong>Relu 的 inplace 参数</strong></p>
-<p>激活函数 Relu() 有一个默认参数 inplace ，默认为Flase， 当设置为True的时候，我们在通过relu() 计算得到的新值不会占用新的空间而是直接覆盖原来的值，这表示设为True， 可以节省一部分显存。</p>
-<p><strong>梯度累积</strong></p>
-<p>首先， 要了解一些Pytorch的基本知识：</p>
-<ul>
-<li>在Pytorch 中，当我们执行 loss.backward() 时， 会为每个参数计算梯度，并将其存储在 paramter.grad 中， 注意到， paramter.grad 是一个张量， 其会累加每次计算得到的梯度。</li>
-<li>在 Pytorch 中， 只有调用 optimizer.step()时才会进行梯度下降更新网络参数。 </li>
-</ul>
-<p>我们知道， batch size 与占用显存息息相关，但有时候我们的batch size 又不能设置的太小，这咋办呢？ 答案就是<strong>梯度累加</strong>。</p>
-<p>我们先来看看传统训练：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i,(feature,target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    outputs = model(feature)  <span class="comment"># 前向传播</span></span><br><span class="line">    loss = criterion(outputs,target)  <span class="comment"># 计算损失</span></span><br><span class="line"> </span><br><span class="line">    optimizer.zero_grad()   <span class="comment"># 清空梯度</span></span><br><span class="line">    loss.backward()  <span class="comment"># 计算梯度</span></span><br><span class="line">    optimizer.step()  <span class="comment"># 反向传播， 更新网络参数</span></span><br></pre></td></tr></table></figure>
-
-<p>而加入梯度累加之后，代码是这样的：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i,(features,target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    outputs = model(images)  <span class="comment"># 前向传播</span></span><br><span class="line">    loss = criterion(outputs,target)  <span class="comment"># 计算损失</span></span><br><span class="line">    loss = loss/accumulation_steps   <span class="comment"># 可选，如果损失要在训练样本上取平均</span></span><br><span class="line"> </span><br><span class="line">    loss.backward()  <span class="comment"># 计算梯度</span></span><br><span class="line">    <span class="keyword">if</span>((i+<span class="number">1</span>)%accumulation_steps)==<span class="number">0</span>:</span><br><span class="line">        optimizer.step()        <span class="comment"># 反向传播，更新网络参数</span></span><br><span class="line">        optimizer.zero_grad()   <span class="comment"># 清空梯度</span></span><br></pre></td></tr></table></figure>
-
-<p>比较来看， 我们发现，梯度累加本质上就是累加 accumulation_steps 个batch 的梯度， 再根据累加的梯度来更新网络参数，以达到类似batch_size 为 accumulation_steps * batch_size 的效果。在使用时，需要注意适当的扩大学习率。</p>
-<p>更详细来说， 我们假设 batch size = 32， accumulation steps = 8 ， 梯度积累首先在前向传播的时候讲 batch 分为 accumulation steps 份， 然后得到 size=4 的小份batch ， 每次就以小 batch 来计算梯度，但是不更新参数，将梯度积累下来，直到我们计算了 accumulation steps 个小 batch， 我们再更新参数。</p>
-<p>梯度积累能很大程度上缓解GPU显存不足的问题，推荐使用。</p>
-<p><strong>在Bert的仓库中，就使用了这个Trick，十分实用，简直是我们这种乞丐实验室的良心Trick。</strong></p>
-<p><strong>梯度检查点</strong></p>
-<p>这个Trick我没用过，毕竟模型还没有那么那么大。</p>
-<p>等我用过再更新吧，先把坑挖下。</p>
-<p><strong>最后</strong></p>
-<p>哎， 如果你看完了这篇文章，就说明了一件事情： <strong>小伙子，你卡也不够啊。</strong>哎， 乞丐实验室不配深度学习，哭了。</p>
-<p><strong>Reference</strong></p>
-<p>[1]<a href="https://zhuanlan.zhihu.com/p/31558973" target="_blank" rel="noopener">科普帖：深度学习中GPU和显存分析</a></p>
-<p>[2]<a href="https://link.zhihu.com/?target=https://oldpan.me/archives/how-to-use-memory-pytorch">如何在Pytorch中精细化利用显存</a></p>
-<p>[3]<a href="https://link.zhihu.com/?target=https://www.jiqizhixin.com/articles/2018-10-17-11">GPU捉襟见肘还想训练大批量模型？谁说不可以</a></p>
-<p>[4]<a href="https://www.zhihu.com/question/303070254" target="_blank" rel="noopener">PyTorch中在反向传播前为什么要手动将梯度清零？</a></p>
-<p>[5]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/from-zero-to-research-an-introduction-to-meta-learning-8e16e677f78a">From zero to research — An introduction to Meta-learning</a></p>
-<p>[6]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/training-larger-batches-practical-tips-on-1-gpu-multi-gpu-distributed-setups-ec88c3e51255">Training Neural Nets on Larger Batches: Practical Tips for 1-GPU, Multi-GPU &amp; Distributed setups</a></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>GPU</tag>
-        <tag>深度神经网络模型</tag>
-        <tag>显存</tag>
       </tags>
   </entry>
   <entry>
@@ -523,6 +430,99 @@
         <tag>工具</tag>
         <tag>Ventoy</tag>
         <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
+    <url>/2020/05/12/%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%97%B6GPU%E6%98%BE%E5%AD%98%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
+    <content><![CDATA[<p><strong>前言</strong></p>
+<p>最近跑的模型都比较大，尤其是Bert， 这真的是难为我 1080ti 了， 在Bert的Example中，官方提供了一些 Trick 来帮助我们加速训练，很良心， 但感觉还不够，于是花费一些时间整理出一个 Trick 集合，来帮助我们在显存不足的时候来嘿嘿嘿。</p>
+<p>本文分为两大部分，第一部分引入一个主题：如何估计模型所需显存， 第二个主题：GPU显存不足时的各种 Trick 。</p>
+<p><strong>监控 GPU</strong></p>
+<p>监控GPU最常用的当然是 nvidia-smi ，但有一个工具能够更好的展示信息：gpustat 。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">nvidia<span class="literal">-smi</span></span><br><span class="line">watch -<span class="literal">-color</span> <span class="literal">-n1</span> gpustat <span class="literal">-cpu</span>   <span class="comment"># 动态事实监控GPU</span></span><br></pre></td></tr></table></figure>
+<p>推荐在配置文件中配置别名，反正我每次 gpu 一下，信息就全出来了，很方便。</p>
+<p>下面有同学推荐nvtop， 我简单试了试，的确挺好的，展现出现的信息很丰富 ， 推荐试一试。</p>
+<p><strong>如何估计模型显存 [1]</strong><br>首先，思考一个问题： 模型中的哪些东西占据了我的显存，咋就动不动就 out of memory？</p>
+<p>其实一个模型所占用的显存主要包含两部分： <strong>模型自身的参数， 优化器参数， 模型每层的输入输出。</strong></p>
+<p>模型自身参数</p>
+<p>模型自身的参数指的就是各个网络层的 Weight 和Bias，这部分显存在模型加载完成之后就会被占用， 注意到的是，有些层是有参数的，如CNN， RNN； 而有些层是无参数的， 如激活层， 池化层等。</p>
+<p>从Pytorch 的角度来说，当你执行 model.to(device) 是， 你的模型就加载完毕，此时你的模型就已经加载完成了。</p>
+<p>对于Pytorch来说，模型参数存储在 model.parameters() 中，因此，我们不需要自己计算，完全可以通过Pytorh来直接打印：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Model &#123;&#125; : params: &#123;:4f&#125;M'</span>.format(model._get_name()， para * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>优化器参数</strong></p>
+<p>优化器参数指的是模型在优化过程即反向传播中所产生的参数， 这部分参数主要指的就是 dw， 即梯度，在SGD中， 其大小与参数一样， 因此在优化期间， 模型的参数所占用的显存会翻倍。</p>
+<p>值得注意的是，不同的优化器其所需保存的优化参数不同， 对于 Adam， 由于其还需要保存其余参数， 模型的参数量会在优化区间翻 4 倍。</p>
+<p><strong>模型每层的输入输出</strong></p>
+<p><strong>首先</strong>，第一点是输入数据所占用的显存， 这部分所占用的显存其实并不大，这是因为我们往往采用迭代器的方式读取数据，这意味着我们其实并不是一次性的将所有数据读入显存，而这保证每次输入所占用的显存与整个网络参数来比是微不足道的。</p>
+<p><strong>然后</strong>，在模型进行前向传播与反向传播时， 一个很重要的事情就是计算并保存每一层的输出以及其对应的梯度， 这意味着，这也占据了很大一部分显存。</p>
+<p><strong>最后</strong>， 模型输出的显存占用可以总结为：</p>
+<ul>
+<li>每一层的输出(多维数组)， 其对应的梯度， 值得注意的是，模型输出不需要存储相应的动量信息（即此处如果使用Adam， 模型输出的参数量依旧是2倍而不是4倍， 我也不知道为啥？？求大佬指教）</li>
+<li>输出的显存占用与 batch size 成正比</li>
+</ul>
+<p>那么有没有办法通过Pytorch来计算这部分参数量呢？ 答案是有的，我们可以假设一个batch的样本，然后通过 model.modules() 来对每一层进行遍历，获得每一层的输出shape， 然后就能够获得一个batch的数据的输出参数量。[2]</p>
+<p><strong>所有的显存占用计算</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">显存占用 &#x3D; 模型自身参数 × n + batch size × 输出参数量 × 2 + 一个batch的输入数据（往往忽略）</span><br></pre></td></tr></table></figure>
+
+<p>其中，n是根据优化算法来定的，如果选用SGD， 则 n = 2， 如果选择Adam， 则 n = 4.</p>
+<p>一个很棒的实现如下， 我懒得再重新写了，你可以根据这个改一改，问题不大。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 模型显存占用监测函数</span></span><br><span class="line"><span class="comment"># model：输入的模型</span></span><br><span class="line"><span class="comment"># input：实际中需要输入的Tensor变量</span></span><br><span class="line"><span class="comment"># type_size 默认为 4 默认类型为 float32 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">modelsize</span><span class="params">(model, input, type_size=<span class="number">4</span>)</span>:</span></span><br><span class="line">    para = sum([np.prod(list(p.size())) <span class="keyword">for</span> p <span class="keyword">in</span> model.parameters()])</span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : params: &#123;:4f&#125;M'</span>.format(model._get_name(), para * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br><span class="line"> </span><br><span class="line">    input_ = input.clone()</span><br><span class="line">    input_.requires_grad_(requires_grad=<span class="literal">False</span>)</span><br><span class="line"> </span><br><span class="line">    mods = list(model.modules())</span><br><span class="line">    out_sizes = []</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(mods)):</span><br><span class="line">        m = mods[i]</span><br><span class="line">        <span class="keyword">if</span> isinstance(m, nn.ReLU):</span><br><span class="line">            <span class="keyword">if</span> m.inplace:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        out = m(input_)</span><br><span class="line">        out_sizes.append(np.array(out.size()))</span><br><span class="line">        input_ = out</span><br><span class="line"> </span><br><span class="line">    total_nums = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(out_sizes)):</span><br><span class="line">        s = out_sizes[i]</span><br><span class="line">        nums = np.prod(np.array(s))</span><br><span class="line">        total_nums += nums</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : intermedite variables: &#123;:3f&#125; M (without backward)'</span></span><br><span class="line">          .format(model._get_name(), total_nums * type_size / <span class="number">1000</span> / <span class="number">1000</span>))</span><br><span class="line">    print(<span class="string">'Model &#123;&#125; : intermedite variables: &#123;:3f&#125; M (with backward)'</span></span><br><span class="line">          .format(model._get_name(), total_nums * type_size*<span class="number">2</span> / <span class="number">1000</span> / <span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>GPU 显存不足时的Trick [2]</strong></p>
+<p>此处不讨论多GPU， 分布式计算等情况，只讨论一些常规的 Trick， 会不定时进行更新。</p>
+<p><strong>降低batch size</strong></p>
+<p>这应该很好理解，适当降低batch size， 则模型每层的输入输出就会成线性减少， 效果相当明显。这里需要注意的一点是, dev batch size 的调整也有助于降低显存, 同时,不要将 dev 或 test 的batch size 设置为样本集长度, 我最近就干了这个傻事，害的我调试了一天才调出来是这个问题。</p>
+<p><strong>选择更小的数据类型</strong></p>
+<p>一般默认情况下， 整个网络中采用的是32位的浮点数，如果切换到 16位的浮点数，其显存占用量将接近呈倍数递减。</p>
+<p><strong>精简模型</strong></p>
+<p>在设计模型时，适当的精简模型，如原来两层的LSTM转为一层； 原来使用LSTM， 现在使用GRU； 减少卷积核数量； 尽量少的使用 Linear 等。</p>
+<p><strong>数据角度</strong></p>
+<p>对于文本数据来说，长序列所带来的参数量是呈线性增加的， 适当的缩小序列长度可以极大的降低参数量。</p>
+<p><strong>total_loss</strong></p>
+<p>考虑到 loss 本身是一个包含梯度信息的 tensor， 因此，正确的求损失和的方式为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">total_loss +&#x3D; loss.item()</span><br></pre></td></tr></table></figure>
+
+<p><strong>释放不需要的张量和变量</strong></p>
+<p>采用del释放你不再需要的张量和变量，这也要求我们在写模型的时候注意变量的使用，不要随心所欲，漫天飞舞。</p>
+<p><strong>Relu 的 inplace 参数</strong></p>
+<p>激活函数 Relu() 有一个默认参数 inplace ，默认为Flase， 当设置为True的时候，我们在通过relu() 计算得到的新值不会占用新的空间而是直接覆盖原来的值，这表示设为True， 可以节省一部分显存。</p>
+<p><strong>梯度累积</strong></p>
+<p>首先， 要了解一些Pytorch的基本知识：</p>
+<ul>
+<li>在Pytorch 中，当我们执行 loss.backward() 时， 会为每个参数计算梯度，并将其存储在 paramter.grad 中， 注意到， paramter.grad 是一个张量， 其会累加每次计算得到的梯度。</li>
+<li>在 Pytorch 中， 只有调用 optimizer.step()时才会进行梯度下降更新网络参数。 </li>
+</ul>
+<p>我们知道， batch size 与占用显存息息相关，但有时候我们的batch size 又不能设置的太小，这咋办呢？ 答案就是<strong>梯度累加</strong>。</p>
+<p>我们先来看看传统训练：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i,(feature,target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    outputs = model(feature)  <span class="comment"># 前向传播</span></span><br><span class="line">    loss = criterion(outputs,target)  <span class="comment"># 计算损失</span></span><br><span class="line"> </span><br><span class="line">    optimizer.zero_grad()   <span class="comment"># 清空梯度</span></span><br><span class="line">    loss.backward()  <span class="comment"># 计算梯度</span></span><br><span class="line">    optimizer.step()  <span class="comment"># 反向传播， 更新网络参数</span></span><br></pre></td></tr></table></figure>
+
+<p>而加入梯度累加之后，代码是这样的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i,(features,target) <span class="keyword">in</span> enumerate(train_loader):</span><br><span class="line">    outputs = model(images)  <span class="comment"># 前向传播</span></span><br><span class="line">    loss = criterion(outputs,target)  <span class="comment"># 计算损失</span></span><br><span class="line">    loss = loss/accumulation_steps   <span class="comment"># 可选，如果损失要在训练样本上取平均</span></span><br><span class="line"> </span><br><span class="line">    loss.backward()  <span class="comment"># 计算梯度</span></span><br><span class="line">    <span class="keyword">if</span>((i+<span class="number">1</span>)%accumulation_steps)==<span class="number">0</span>:</span><br><span class="line">        optimizer.step()        <span class="comment"># 反向传播，更新网络参数</span></span><br><span class="line">        optimizer.zero_grad()   <span class="comment"># 清空梯度</span></span><br></pre></td></tr></table></figure>
+
+<p>比较来看， 我们发现，梯度累加本质上就是累加 accumulation_steps 个batch 的梯度， 再根据累加的梯度来更新网络参数，以达到类似batch_size 为 accumulation_steps * batch_size 的效果。在使用时，需要注意适当的扩大学习率。</p>
+<p>更详细来说， 我们假设 batch size = 32， accumulation steps = 8 ， 梯度积累首先在前向传播的时候讲 batch 分为 accumulation steps 份， 然后得到 size=4 的小份batch ， 每次就以小 batch 来计算梯度，但是不更新参数，将梯度积累下来，直到我们计算了 accumulation steps 个小 batch， 我们再更新参数。</p>
+<p>梯度积累能很大程度上缓解GPU显存不足的问题，推荐使用。</p>
+<p><strong>在Bert的仓库中，就使用了这个Trick，十分实用，简直是我们这种乞丐实验室的良心Trick。</strong></p>
+<p><strong>梯度检查点</strong></p>
+<p>这个Trick我没用过，毕竟模型还没有那么那么大。</p>
+<p>等我用过再更新吧，先把坑挖下。</p>
+<p><strong>最后</strong></p>
+<p>哎， 如果你看完了这篇文章，就说明了一件事情： <strong>小伙子，你卡也不够啊。</strong>哎， 乞丐实验室不配深度学习，哭了。</p>
+<p><strong>Reference</strong></p>
+<p>[1]<a href="https://zhuanlan.zhihu.com/p/31558973" target="_blank" rel="noopener">科普帖：深度学习中GPU和显存分析</a></p>
+<p>[2]<a href="https://link.zhihu.com/?target=https://oldpan.me/archives/how-to-use-memory-pytorch">如何在Pytorch中精细化利用显存</a></p>
+<p>[3]<a href="https://link.zhihu.com/?target=https://www.jiqizhixin.com/articles/2018-10-17-11">GPU捉襟见肘还想训练大批量模型？谁说不可以</a></p>
+<p>[4]<a href="https://www.zhihu.com/question/303070254" target="_blank" rel="noopener">PyTorch中在反向传播前为什么要手动将梯度清零？</a></p>
+<p>[5]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/from-zero-to-research-an-introduction-to-meta-learning-8e16e677f78a">From zero to research — An introduction to Meta-learning</a></p>
+<p>[6]<a href="https://link.zhihu.com/?target=https://medium.com/huggingface/training-larger-batches-practical-tips-on-1-gpu-multi-gpu-distributed-setups-ec88c3e51255">Training Neural Nets on Larger Batches: Practical Tips for 1-GPU, Multi-GPU &amp; Distributed setups</a></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>GPU</tag>
+        <tag>深度神经网络模型</tag>
+        <tag>显存</tag>
       </tags>
   </entry>
   <entry>
