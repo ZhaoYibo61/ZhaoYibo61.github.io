@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>六六和文文</title>
-    <url>/2020/05/12/My-New-Post/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Matlab编译安装MatConvnet流程及问题解决</title>
     <url>/2020/05/12/Matlab%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85MatConvnet%E6%B5%81%E7%A8%8B%E5%8F%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<p><strong>最近使用Matlab跑深度学习的项目，需要安装MatConvnet，在这个过程中遇到了一些问题，成功解决后特在此总结如下。</strong></p>
@@ -54,17 +49,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows下Whois命令的安装和使用</title>
-    <url>/2020/05/21/Windows%E4%B8%8BWhois%E5%91%BD%E4%BB%A4%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><strong>Whois，通常来说，就是一个用于查询域名是否已经被注册，以及注册域名的详细信息（如域名所有人、域名注册商、域名注册日期和过期日期等）的工具。</strong><br>当然，现在已经有各种网页版查看 whois 信息的工具，但是很多时候网页查询有附加条件，比如输入验证码或者不支持的后缀等，比较低效。因此我本人还是比较喜欢在命令行下使用 whois 命令来直接获得域名的 whois 信息。<strong>本文将介绍在 Windows 下使用 whois 命令行。Windows 以 Windows 10 x64 为例。</strong></p>
-<p> <strong>1. Windows 下 whois 命令行的安装</strong><br>这个工具默认支持顶级通用域名以及国别域名，但目前还有很多奇葩的新域名后缀则不支持，不过没关系，这个可以通过修改配置文件来支持的。默认 Windows 下是没有 whois 这个命令的，因此需要安装 whoiscl 这个小工具。<br><a href="http://nirsoft.net/utils/whoiscl.html" target="_blank" rel="noopener">官方网站</a><br><a href="http://nirsoft.net/utils/whoiscl.zip" target="_blank" rel="noopener">下载链接</a><br>下载解压后，会看到 WhoisCL.exe 这个文件，改名为 whois.exe 并复制到 C:\Windows\System32\ 目录下即可。然后打开 cmd，输入 whois 回车后，就能看到基本用法和版本号。如下图所示：<br><img src="https://img-blog.csdnimg.cn/2020052109194241.png#pic_center" alt="在这里插入图片描述"></p>
-<p> <strong>2. Windows 下 whois 命令行的配置文件</strong><br>所谓的配置文件，其实就是追加的 whois servers 列表而已。使用 whois 命令的时候，不同的后缀会向不同的 whois 服务器查询，后缀的支持或者不支持，全在于 whois servers 里有没有此 whois 服务器而已。我们知道，这个工具默认支持顶级通用域名以及国别域名，如果要查询其他后缀的域名，在需要在 whois.exe 同目录下（也就是 C:\Windows\System32\ 目录）新建一个名为 whois-servers.txt 的文件。按照一个后缀对应一个 whois server 的格式一行添加一个（中间要有个空格）。比如：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">android</span> <span class="selector-tag">domain-registry-whois</span><span class="selector-class">.l</span><span class="selector-class">.google</span><span class="selector-class">.com</span></span><br><span class="line"><span class="selector-tag">google</span> <span class="selector-tag">domain-registry-whois</span><span class="selector-class">.l</span><span class="selector-class">.google</span><span class="selector-class">.com</span></span><br><span class="line"><span class="selector-tag">xyz</span> <span class="selector-tag">whois</span><span class="selector-class">.nic</span><span class="selector-class">.xyz</span></span><br><span class="line"><span class="selector-tag">tokyo</span> <span class="selector-tag">whois</span><span class="selector-class">.nic</span><span class="selector-class">.tokyo</span></span><br></pre></td></tr></table></figure>
-<p>然后，再查询那些原本不支持的域名后缀，就可以了。</p>
-<p> <strong>3. Windows 下 whois 命令行使用代理查询</strong><br>由于众所周知的原因，即便是在 whois-servers.txt 文件中添加了 whois server ，但某些后缀还是查询不到 whois 信息的。比如 .chrome 后缀。好在 whoiscl 这个工具支持代理，socks4 和 socks5 都支持。那么，这时候可以使用 Shadowsocks 。比如现在想查询 nic.chrome，命令如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">whois</span> <span class="selector-tag">-socks5</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:1080</span> <span class="selector-tag">nic</span><span class="selector-class">.chrome</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
+    <title>六六和文文</title>
+    <url>/2020/05/12/My-New-Post/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>TensorLy-神经网络张量库</title>
@@ -92,39 +79,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LaTeX-TeXlive和TeXstudio的下载、安装配置及使用</title>
-    <url>/2020/05/12/LaTeX-TeXlive%E5%92%8CTeXstudio%E7%9A%84%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><strong>一、LaTeX介绍</strong></p>
-<p>LaTeX，是一种基于TeX的排版系统，由美国电脑学家莱斯利·兰伯特在20世纪80年代初期开发，利用这种格式，用户能在几天，甚至几小时内生成很多具有书籍质量的印刷品。因此它非常适用于生成高印刷质量的科技和数学类文档。<br><strong>LaTeX的使用主要需要安装两个东西：</strong></p>
-<ol>
-<li>根据平台选择一个TeX发行版进行安装，建议选择最全功能最多的版本。TeX发行版的概念相当于Linux及其发行版，Linux内核虽然只有一个，但是有很多基于内核的不同特色的Linux发行版，比如Ubuntu，Fedora等等不胜枚举。这里我们选择TeXlive。</li>
-<li>选择一个合适的LaTex编辑器。在安装好LaTeX环境以后，通常都会有一个自带的编辑器，比如CTex的WinEdt，MacTeX的TeXShop，不过功能并不强大，好比 Windows 记事本，只有一些基本的文本编辑功能。这里我们选择比较强大的TeXstudio。</li>
-</ol>
-<p><strong>二、TeXlive</strong></p>
-<p> <strong>1. 下载</strong><br>推荐下载离线安装包，然后安装的方式。可以使用官方的镜像下载，也可以利用国内的镜像下载。官方下载网址: <a href="http://www.tug.org/texlive/" target="_blank" rel="noopener">http://www.tug.org/texlive/</a><br>进入官网后，按以下操作进行：<br><img src="https://img-blog.csdnimg.cn/20200407113720505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113843733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113818579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113935159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>然后选择texlive2019.iso点击进行下载。官网下载比较慢，我们可以利用国内的镜像网站来下载，这样下载速度快。清华大学镜像文件：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/</a><br><img src="https://img-blog.csdnimg.cn/20200407114040252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>2. 安装</strong><br>将texlive2019.iso 文件解压，然后<strong>右键“以管理员身份运行”打开</strong>其中的install-tl-advanced.bat文件。<br><img src="https://img-blog.csdnimg.cn/20200407114344490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击Advanced。<br><img src="https://img-blog.csdnimg.cn/20200407114408627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>然后依次按下图操作，修改安装目录，点击安装。<br><img src="https://img-blog.csdnimg.cn/2020040711451044.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>安装完成（用时55分钟）。<br><img src="https://img-blog.csdnimg.cn/2020040711461364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证是否安装成功，打开cmd，输入tex -version，如果出现版本号即说明安装成功。<br><img src="https://img-blog.csdnimg.cn/20200407114909605.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>接下来就是安装LaTeX的编辑器，我们选用TeXstudio。</p>
-<p> <strong>三、TeXstudio</strong></p>
-<p> <strong>1. 下载及安装</strong><br> 直接去官网下载（需要科学上网）。官网地址：<a href="https://www.texstudio.org/" target="_blank" rel="noopener">https://www.texstudio.org/</a><br> 不需要科学上网。地址：<a href="http://texstudio.sourceforge.net/" target="_blank" rel="noopener">http://texstudio.sourceforge.net/</a><br>下载后直接点击安装，一样选择安装路径，然后进行一些简单的设置。这里我下载的安装程序为“texstudio-2.12.22-win-qt5.exe”。</p>
-<p> <strong>2. 配置</strong></p>
-<ul>
-<li>依次找到Options→Configure TeXstudio→Commands，指定Commands命令的执行程序，将BibTeX、BibTeX 8-Bit、Biber的路径设置为TeXlive安装路径下对应EXE文件。<br><img src="https://img-blog.csdnimg.cn/20200407120403549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
-<li>设置中文界面：安装结束后，一开始的打开界面是英文的，这里我们可以切换成中文。<br>依次点击：Options→Configure Texstudio→General→Language→zh_CN<br><img src="https://img-blog.csdnimg.cn/20200407120542695.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
-<li>添加行号：添加段落行号，这样可以很方便查看段落的某句话所在的位置，尤其是在运行报错时，有行号就非常方便查看错误的位置了。<br>依次点击：选项→设置Texstudio→显示高级选项→编辑器→显示行号→所有行号<br><img src="https://img-blog.csdnimg.cn/20200407120651367.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
-<li>设置编译器与编码：为了正常的输出中文，我们需要把默认编译器改成xelatex，utf-8编码。如果是为了编写英文论文，要用“pdflatex”。<br><img src="https://img-blog.csdnimg.cn/20200407121052151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3.测试</strong><br>输入下述代码，运行，得到下述结果即代表安装配置成功。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\documentclass[11pt]&#123;ctexart&#125;  </span><br><span class="line">\usepackage[top&#x3D;2cm, bottom&#x3D;2cm, left&#x3D;2cm, right&#x3D;2cm]&#123;geometry&#125;  </span><br><span class="line">\usepackage&#123;algorithm&#125;  </span><br><span class="line">\usepackage&#123;algorithmicx&#125;  </span><br><span class="line">\usepackage&#123;algpseudocode&#125;  </span><br><span class="line">\usepackage&#123;amsmath&#125;  </span><br><span class="line"> </span><br><span class="line">\floatname&#123;algorithm&#125;&#123;算法&#125;  </span><br><span class="line">\renewcommand&#123;\algorithmicrequire&#125;&#123;\textbf&#123;输入:&#125;&#125;  </span><br><span class="line">\renewcommand&#123;\algorithmicensure&#125;&#123;\textbf&#123;输出:&#125;&#125;  </span><br><span class="line"> </span><br><span class="line">\begin&#123;document&#125;  </span><br><span class="line">	\begin&#123;algorithm&#125;  </span><br><span class="line">		\caption&#123;用归并排序求逆序数&#125;  </span><br><span class="line">		\begin&#123;algorithmic&#125;[1] %每行显示行号  </span><br><span class="line">			\Require $Array$数组，$n$数组大小  </span><br><span class="line">			\Ensure 逆序数  </span><br><span class="line">			\Function &#123;MergerSort&#125;&#123;$Array, left, right$&#125;  </span><br><span class="line">			\State $result \gets 0$  </span><br><span class="line">			\If &#123;$left &lt; right$&#125;  </span><br><span class="line">			\State $middle \gets (left + right) &#x2F; 2$  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;MergerSort&#125;&#123;$Array, left, middle$&#125;  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;MergerSort&#125;&#123;$Array, middle, right$&#125;  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;Merger&#125;&#123;$Array,left,middle,right$&#125;  </span><br><span class="line">			\EndIf  </span><br><span class="line">			\State \Return&#123;$result$&#125;  </span><br><span class="line">			\EndFunction  </span><br><span class="line">			\State  </span><br><span class="line">			\Function&#123;Merger&#125;&#123;$Array, left, middle, right$&#125;  </span><br><span class="line">			\State $i\gets left$  </span><br><span class="line">			\State $j\gets middle$  </span><br><span class="line">			\State $k\gets 0$  </span><br><span class="line">			\State $result \gets 0$  </span><br><span class="line">			\While&#123;$i&lt;middle$ \textbf&#123;and&#125; $j&lt;right$&#125;  </span><br><span class="line">			\If&#123;$Array[i]&lt;Array[j]$&#125;  </span><br><span class="line">			\State $B[k++]\gets Array[i++]$  </span><br><span class="line">			\Else  </span><br><span class="line">			\State $B[k++] \gets Array[j++]$  </span><br><span class="line">			\State $result \gets result + (middle - i)$  </span><br><span class="line">			\EndIf  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\While&#123;$i&lt;middle$&#125;  </span><br><span class="line">			\State $B[k++] \gets Array[i++]$  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\While&#123;$j&lt;right$&#125;  </span><br><span class="line">			\State $B[k++] \gets Array[j++]$  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\For&#123;$i &#x3D; 0 \to k-1$&#125;  </span><br><span class="line">			\State $Array[left + i] \gets B[i]$  </span><br><span class="line">			\EndFor  </span><br><span class="line">			\State \Return&#123;$result$&#125;  </span><br><span class="line">			\EndFunction  </span><br><span class="line">		\end&#123;algorithmic&#125;  </span><br><span class="line">	\end&#123;algorithm&#125;  </span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<img src="https://img-blog.csdnimg.cn/20200407124207109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>至此，TeXlive和TeXstudio的下载、安装配置及使用已经全部完成，各位小伙伴如果在安装配置过程中出现问题欢迎在评论区留言，我会及时回复。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Windows软件</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>TeXlive</tag>
-        <tag>TeXstudio</tag>
-        <tag>Windows</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pytorch中torchvision.datasets.ImageFolder报错：Found 0 files in subfolders of_XXX，完美解决！</title>
     <url>/2020/05/12/Pytorch%E4%B8%ADtorchvision.datasets.ImageFolder%E6%8A%A5%E9%94%99%EF%BC%9AFound%200%20files%20in%20subfolders%20of_XXX%EF%BC%8C%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81/</url>
     <content><![CDATA[<p><strong>1.报错如下：</strong></p>
@@ -141,6 +95,26 @@
       <tags>
         <tag>Pytorch</tag>
         <tag>torchvision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows下Whois命令的安装和使用</title>
+    <url>/2020/05/21/Windows%E4%B8%8BWhois%E5%91%BD%E4%BB%A4%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><strong>Whois，通常来说，就是一个用于查询域名是否已经被注册，以及注册域名的详细信息（如域名所有人、域名注册商、域名注册日期和过期日期等）的工具。</strong><br>当然，现在已经有各种网页版查看 whois 信息的工具，但是很多时候网页查询有附加条件，比如输入验证码或者不支持的后缀等，比较低效。因此我本人还是比较喜欢在命令行下使用 whois 命令来直接获得域名的 whois 信息。<strong>本文将介绍在 Windows 下使用 whois 命令行。Windows 以 Windows 10 x64 为例。</strong></p>
+<p> <strong>1. Windows 下 whois 命令行的安装</strong><br>这个工具默认支持顶级通用域名以及国别域名，但目前还有很多奇葩的新域名后缀则不支持，不过没关系，这个可以通过修改配置文件来支持的。默认 Windows 下是没有 whois 这个命令的，因此需要安装 whoiscl 这个小工具。<br><a href="http://nirsoft.net/utils/whoiscl.html" target="_blank" rel="noopener">官方网站</a><br><a href="http://nirsoft.net/utils/whoiscl.zip" target="_blank" rel="noopener">下载链接</a><br>下载解压后，会看到 WhoisCL.exe 这个文件，改名为 whois.exe 并复制到 C:\Windows\System32\ 目录下即可。然后打开 cmd，输入 whois 回车后，就能看到基本用法和版本号。如下图所示：<br><img src="https://img-blog.csdnimg.cn/2020052109194241.png#pic_center" alt="在这里插入图片描述"></p>
+<p> <strong>2. Windows 下 whois 命令行的配置文件</strong><br>所谓的配置文件，其实就是追加的 whois servers 列表而已。使用 whois 命令的时候，不同的后缀会向不同的 whois 服务器查询，后缀的支持或者不支持，全在于 whois servers 里有没有此 whois 服务器而已。我们知道，这个工具默认支持顶级通用域名以及国别域名，如果要查询其他后缀的域名，在需要在 whois.exe 同目录下（也就是 C:\Windows\System32\ 目录）新建一个名为 whois-servers.txt 的文件。按照一个后缀对应一个 whois server 的格式一行添加一个（中间要有个空格）。比如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">android</span> <span class="selector-tag">domain-registry-whois</span><span class="selector-class">.l</span><span class="selector-class">.google</span><span class="selector-class">.com</span></span><br><span class="line"><span class="selector-tag">google</span> <span class="selector-tag">domain-registry-whois</span><span class="selector-class">.l</span><span class="selector-class">.google</span><span class="selector-class">.com</span></span><br><span class="line"><span class="selector-tag">xyz</span> <span class="selector-tag">whois</span><span class="selector-class">.nic</span><span class="selector-class">.xyz</span></span><br><span class="line"><span class="selector-tag">tokyo</span> <span class="selector-tag">whois</span><span class="selector-class">.nic</span><span class="selector-class">.tokyo</span></span><br></pre></td></tr></table></figure>
+<p>然后，再查询那些原本不支持的域名后缀，就可以了。</p>
+<p> <strong>3. Windows 下 whois 命令行使用代理查询</strong><br>由于众所周知的原因，即便是在 whois-servers.txt 文件中添加了 whois server ，但某些后缀还是查询不到 whois 信息的。比如 .chrome 后缀。好在 whoiscl 这个工具支持代理，socks4 和 socks5 都支持。那么，这时候可以使用 Shadowsocks 。比如现在想查询 nic.chrome，命令如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">whois</span> <span class="selector-tag">-socks5</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:1080</span> <span class="selector-tag">nic</span><span class="selector-class">.chrome</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Whois</tag>
       </tags>
   </entry>
   <entry>
@@ -162,9 +136,27 @@
       </categories>
       <tags>
         <tag>Windows</tag>
-        <tag>工具</tag>
         <tag>cFosSpeed</tag>
+        <tag>工具</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>import torch报错：from torch._C import _ ImportError_ DLL load failed_ 找不到指定的程序，完美解决！</title>
@@ -182,23 +174,6 @@
         <tag>Pytorch</tag>
         <tag>Ananconda</tag>
         <tag>torch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
-    <url>/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
-    <content><![CDATA[<p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
-<p><strong>2.GaussianNB</strong><br>GaussianNB假设特征的先验概率为正态分布，即如下式：<br> <img src="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center" alt="在这里插入图片描述">其中Ck为Y的第k类类别。μk和σ2k为需要从训练集估计的值。<br>GaussianNB会根据训练集求出μk和σ2k。μk为在样本类别Ck中，所有Xj的平均值。σ2k为在样本类别Ck中，所有Xj的方差。<br>GaussianNB类的主要参数仅有一个，即先验概率priors ，对应Y的各个类别的先验概率P(Y=Ck)。这个值默认不给出，如果不给出此时P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。如果给出的话就以priors 为准。<br>在使用GaussianNB的fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。<br>predict方法就是我们最常用的预测方法，直接给出测试集的预测类别输出。<br>predict_proba则不同，它会给出测试集样本在各个类别上预测的概率。容易理解，predict_proba预测出的各个类别概率里的最大值对应的类别，也就是predict方法得到类别。<br>predict_log_proba和predict_proba类似，它会给出测试集样本在各个类别上预测的概率的一个对数转化。转化后predict_log_proba预测出的各个类别对数概率里的最大值对应的类别，也就是predict方法得到类别。<br>此外，GaussianNB一个重要的功能是有 partial_fit方法，这个方法的一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等份，重复调用partial_fit来一步步的学习训练集，非常方便。后面介绍的MultinomialNB和BernoulliNB也有类似的功能。</p>
-<p><strong>3.MultinomialNB</strong><br>MultinomialNB假设特征的先验概率为多项式分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center" alt="在这里插入图片描述">)其中，P(Xj=xjl|Y=Ck)是第k个类别的第j维特征的第l个取值条件概率。mk是训练集中输出为第k类的样本个数。λ 为一个大于0的常数，常常取为1，即拉普拉斯平滑。也可以取其他值。<br>MultinomialNB的参数比GaussianNB多，但是一共也仅仅只有3个。其中，参数alpha即为上面的常数λ，如果你没有特别的需要，用默认的1即可。如果发现拟合的不好，需要调优时，可以选择稍大于1或者稍小于1的数。布尔参数fit_prior表示是否要考虑先验概率，如果是false,则所有的样本类别输出都有相同的类别先验概率。否则可以自己用第三个参数class_prior输入先验概率，或者不输入第三个参数class_prior让MultinomialNB自己从训练集样本来计算先验概率，此时的先验概率为P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。总结如下：<br><img src="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center" alt="在这里插入图片描述">在使用MultinomialNB的fit方法或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。　</p>
-<p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
-<p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
-]]></content>
-      <categories>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>scikit-learn</tag>
-        <tag>朴素贝叶斯</tag>
       </tags>
   </entry>
   <entry>
@@ -223,24 +198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>visdom安装及报错解决方案</title>
     <url>/2020/05/12/visdom%E5%AE%89%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<p><strong>一、安装</strong> </p>
@@ -257,6 +214,23 @@
         <tag>visdom</tag>
         <tag>python</tag>
         <tag>conda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scikit-learn朴素贝叶斯类库使用经验分享</title>
+    <url>/2020/05/12/scikit-learn%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%B1%BB%E5%BA%93%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
+    <content><![CDATA[<p><strong>本文重点讲述scikit-learn朴素贝叶斯类库的使用要点和参数选择。</strong><br><strong>1.scikit-learn 朴素贝叶斯类库</strong><br>朴素贝叶斯是一类比较简单的算法，scikit-learn中朴素贝叶斯类库的使用也比较简单。相对于决策树，KNN之类的算法，朴素贝叶斯需要关注的参数是比较少的，这样也比较容易掌握。在scikit-learn中，一共有3个朴素贝叶斯的分类算法类。分别是GaussianNB，MultinomialNB和BernoulliNB。其中GaussianNB就是先验为高斯分布的朴素贝叶斯，MultinomialNB就是先验为多项式分布的朴素贝叶斯，而BernoulliNB就是先验为伯努利分布的朴素贝叶斯。这三个类适用的分类场景各不相同，一般来说，如果样本特征的分布大部分是连续值，使用GaussianNB会比较好。如果样本特征的分布大部分是多元离散值，使用MultinomialNB比较合适。而如果样本特征是二元离散值或者很稀疏的多元离散值，应该使用BernoulliNB。</p>
+<p><strong>2.GaussianNB</strong><br>GaussianNB假设特征的先验概率为正态分布，即如下式：<br> <img src="https://img-blog.csdnimg.cn/20200423123851596.png#pic_center" alt="在这里插入图片描述">其中Ck为Y的第k类类别。μk和σ2k为需要从训练集估计的值。<br>GaussianNB会根据训练集求出μk和σ2k。μk为在样本类别Ck中，所有Xj的平均值。σ2k为在样本类别Ck中，所有Xj的方差。<br>GaussianNB类的主要参数仅有一个，即先验概率priors ，对应Y的各个类别的先验概率P(Y=Ck)。这个值默认不给出，如果不给出此时P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。如果给出的话就以priors 为准。<br>在使用GaussianNB的fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。<br>predict方法就是我们最常用的预测方法，直接给出测试集的预测类别输出。<br>predict_proba则不同，它会给出测试集样本在各个类别上预测的概率。容易理解，predict_proba预测出的各个类别概率里的最大值对应的类别，也就是predict方法得到类别。<br>predict_log_proba和predict_proba类似，它会给出测试集样本在各个类别上预测的概率的一个对数转化。转化后predict_log_proba预测出的各个类别对数概率里的最大值对应的类别，也就是predict方法得到类别。<br>此外，GaussianNB一个重要的功能是有 partial_fit方法，这个方法的一般用在如果训练集数据量非常大，一次不能全部载入内存的时候。这时我们可以把训练集分成若干等份，重复调用partial_fit来一步步的学习训练集，非常方便。后面介绍的MultinomialNB和BernoulliNB也有类似的功能。</p>
+<p><strong>3.MultinomialNB</strong><br>MultinomialNB假设特征的先验概率为多项式分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423123941228.png#pic_center" alt="在这里插入图片描述">)其中，P(Xj=xjl|Y=Ck)是第k个类别的第j维特征的第l个取值条件概率。mk是训练集中输出为第k类的样本个数。λ 为一个大于0的常数，常常取为1，即拉普拉斯平滑。也可以取其他值。<br>MultinomialNB的参数比GaussianNB多，但是一共也仅仅只有3个。其中，参数alpha即为上面的常数λ，如果你没有特别的需要，用默认的1即可。如果发现拟合的不好，需要调优时，可以选择稍大于1或者稍小于1的数。布尔参数fit_prior表示是否要考虑先验概率，如果是false,则所有的样本类别输出都有相同的类别先验概率。否则可以自己用第三个参数class_prior输入先验概率，或者不输入第三个参数class_prior让MultinomialNB自己从训练集样本来计算先验概率，此时的先验概率为P(Y=Ck)=mk/m。其中m为训练集样本总数量，mk为输出为第k类别的训练集样本数。总结如下：<br><img src="https://img-blog.csdnimg.cn/20200423124259769.png#pic_center" alt="在这里插入图片描述">在使用MultinomialNB的fit方法或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。　</p>
+<p><strong>4.BernoulliNB</strong><br>BernoulliNB假设特征的先验概率为二元伯努利分布，即如下式：<br><img src="https://img-blog.csdnimg.cn/20200423124411818.png#pic_center" alt="在这里插入图片描述">此时l只有两种取值。xjl只能取值0或者1。<br>BernoulliNB一共有4个参数，其中3个参数的名字和意义与MultinomialNB完全相同。唯一增加的一个参数是binarize。这个参数主要是用来帮助BernoulliNB处理二项分布，可以是数值或者不输入。如果不输入，则BernoulliNB认为每个数据特征都已经是二元的。否则的话，小于binarize的会归为一类，大于binarize的会归为另外一类。<br>在使用BernoulliNB的fit或者partial_fit方法拟合数据后，我们可以进行预测。此时预测有三种方法，包括predict，predict_log_proba和predict_proba。由于方法和GaussianNB完全一样，这里就不累述了。</p>
+<p><strong>以上就是scikit-learn朴素贝叶斯类库的使用经验总结。希望可以帮到各位小伙伴们。</strong></p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>scikit-learn</tag>
+        <tag>朴素贝叶斯</tag>
       </tags>
   </entry>
   <entry>
@@ -406,6 +380,46 @@
       </tags>
   </entry>
   <entry>
+    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
+    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
+    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
+<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
+<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
+<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
+<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
+<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
+<p><strong>6.Ventoy 特点列表</strong></p>
+<ul>
+<li>开源、易用</li>
+<li>快速 （拷贝文件有多快就有多快）</li>
+<li>直接从 ISO 文件启动，无需解开</li>
+<li>无差异支持 Legacy + UEFI 模式</li>
+<li>UEFI 模式支持安全启动 （Secure Boot）</li>
+<li>支持超过 4GB 的 ISO 文件</li>
+<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
+<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
+<li>不仅仅是启动，而是完整的安装过程</li>
+<li>提出 “Ventoy Compatible” 概念</li>
+<li>支持插件扩展</li>
+<li>启动过程中支持 U 盘设置写保护</li>
+<li>不影响 U 盘日常普通使用</li>
+<li>版本升级时数据不会丢失</li>
+<li>无需跟随操作系统升级而升级 Ventoy</li>
+</ul>
+<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
+]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>Ventoy</tag>
+        <tag>开源</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度神经网络模型训练时GPU显存不足怎么办？</title>
     <url>/2020/05/12/%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%97%B6GPU%E6%98%BE%E5%AD%98%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</url>
     <content><![CDATA[<p><strong>前言</strong></p>
@@ -499,46 +513,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用来制作可启动U盘的Windows开源工具--Ventoy</title>
-    <url>/2020/05/12/%E7%94%A8%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Ventoy/</url>
-    <content><![CDATA[<p><strong>Ventoy 是一款开源的，用来制作可启动 U 盘的 Windows 工具，使用简单，只需要将多个系统镜像 ISO 文件拷贝至 U 盘，即可自动创建包含多个系统的启动菜单，来安装操作系统。并且该启动 U 盘还能当普通 U 盘使用。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200430162315282.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>都说一块 U 盘制作一个系统启动盘，Ventoy 最方便的地方就是你可以用它制作一块既能启动 Windows，也能启动 Linux 的启动盘，而且使用非常简单。</p>
-<p>目前已测试过支持包括主流 Windows、服务器版 Windows、Debian、Ubuntu、CentOS、RHEL、Deepin，VMware ESXi 等系统 202 个，你要做的，只是下载系统镜像文件，然后直接拷贝进去就好了。Ventoy 会帮助你自动创建启动菜单。</p>
-<p> <strong>1. 下载 Ventoy</strong><br> 首先，需要下载 Ventoy，有 Windows 与 Linux 两个版本，下载地址位于 GitHub，有能力的前往下载，提供两个国内转运下载地址，版本为2020年4月27日发布的 Ventoy 1.0.08 BETA2：<br><a href="https://appinn.lanzous.com/b0bqg1xqj" target="_blank" rel="noopener">蓝奏盘</a>：密码 eyk5<br><a href="https://www.ventoy.net/cn/index.html?ref=appinn?utm_source=www.appinn.com" target="_blank" rel="noopener">官方主页</a></p>
-<p> <strong>2. 制作启动 U 盘</strong><br>插入 U 盘之后，Ventoy 会自动识别，只需要点击 Install 即可，会两次提醒格式化将会删除 U 盘数据。如果 Ventoy 有更新，点击 Update 更新即可。<br><img src="https://img-blog.csdnimg.cn/20200430163018711.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>3. Linux 安装方式请参考官方文档</strong><br> <a href="https://www.ventoy.net/cn/doc_start.html" target="_blank" rel="noopener">官方文档</a><br>启动盘依旧是普通 U 盘。Ventoy 最酷的地方，是成为启动 U 盘之后，还可以当普通 U 盘使用，保存普通文件，不影响 Ventoy 功能。</p>
-<p> <strong>4. 复制系统 ISO 镜像文件</strong><br>制作好的启动 U 盘，表面上看起来还是一块普通 U 盘，文件管理器里什么文件都没有：<br><img src="https://img-blog.csdnimg.cn/20200430163338706.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>实际上，是因为 Ventoy 将 U 盘分为了两个分区：<br><img src="https://img-blog.csdnimg.cn/2020043016340823.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>EFI 分区被隐藏，无需理会。只需要将 ISO 文件拷贝到 U 盘里即可，比如直接将 Ubuntu 和 Windows XP 两个 ISO 系统镜像文件拷贝到Ventoy(E:) 盘下：<br><img src="https://img-blog.csdnimg.cn/20200430163447633.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Ventoy 会自动扫码 U 盘里的所有 ISO 文件，包括子文件夹，但不支持中文文件夹名称。</p>
-<p> <strong>5. 多系统启动</strong><br> 复制好系统镜像之后，直接拿去启动即可。<br><img src="https://img-blog.csdnimg.cn/20200430163530833.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在虚拟机 PD 中测试成功，已经识别了两个 ISO 文件。选一个，就可以进入正常的系统安装流程了。</p>
-<p><strong>6.Ventoy 特点列表</strong></p>
-<ul>
-<li>开源、易用</li>
-<li>快速 （拷贝文件有多快就有多快）</li>
-<li>直接从 ISO 文件启动，无需解开</li>
-<li>无差异支持 Legacy + UEFI 模式</li>
-<li>UEFI 模式支持安全启动 （Secure Boot）</li>
-<li>支持超过 4GB 的 ISO 文件</li>
-<li>保留 ISO 原始的启动菜单风格（Legacy &amp; UEFI）</li>
-<li>支持大部分常见操作系统, 已测试 200+ 个 ISO 文件</li>
-<li>不仅仅是启动，而是完整的安装过程</li>
-<li>提出 “Ventoy Compatible” 概念</li>
-<li>支持插件扩展</li>
-<li>启动过程中支持 U 盘设置写保护</li>
-<li>不影响 U 盘日常普通使用</li>
-<li>版本升级时数据不会丢失</li>
-<li>无需跟随操作系统升级而升级 Ventoy</li>
-</ul>
-<p><strong>7.最后</strong><br>至此，一个系统启动 U 盘、一个普通 U 盘合二为一的 Ventoy 启动盘已经制作完成，想要添加新的系统只需要更新 U 盘里的 ISO 系统镜像文件即可，也不影响当作普通 U 盘保存文件使用，非常方便。<strong>各位小伙伴快快收藏以备不时之需吧！</strong></p>
-]]></content>
-      <categories>
-        <category>Windows软件</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>工具</tag>
-        <tag>Ventoy</tag>
-        <tag>开源</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>直接调节风扇转速的Windows开源工具--Open Hardware Monitor</title>
     <url>/2020/05/12/%E7%9B%B4%E6%8E%A5%E8%B0%83%E8%8A%82%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F%E7%9A%84Windows%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7--Open%20Hardware%20Monitor/</url>
     <content><![CDATA[<p><strong>Open Hardware Monitor除了能监视系统温度、电压、风扇转速等传统项目外。还能控制风扇转速、远程监控、显示 Gadget 等。最重要的是它是开源的！最近一次更新是2020年3月1日，不过在此之前有将近4年的断更。</strong></p>
@@ -557,6 +531,39 @@
         <tag>工具</tag>
         <tag>开源</tag>
         <tag>Open Hardware Monitor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTeX-TeXlive和TeXstudio的下载、安装配置及使用</title>
+    <url>/2020/05/12/LaTeX-TeXlive%E5%92%8CTeXstudio%E7%9A%84%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><strong>一、LaTeX介绍</strong></p>
+<p>LaTeX，是一种基于TeX的排版系统，由美国电脑学家莱斯利·兰伯特在20世纪80年代初期开发，利用这种格式，用户能在几天，甚至几小时内生成很多具有书籍质量的印刷品。因此它非常适用于生成高印刷质量的科技和数学类文档。<br><strong>LaTeX的使用主要需要安装两个东西：</strong></p>
+<ol>
+<li>根据平台选择一个TeX发行版进行安装，建议选择最全功能最多的版本。TeX发行版的概念相当于Linux及其发行版，Linux内核虽然只有一个，但是有很多基于内核的不同特色的Linux发行版，比如Ubuntu，Fedora等等不胜枚举。这里我们选择TeXlive。</li>
+<li>选择一个合适的LaTex编辑器。在安装好LaTeX环境以后，通常都会有一个自带的编辑器，比如CTex的WinEdt，MacTeX的TeXShop，不过功能并不强大，好比 Windows 记事本，只有一些基本的文本编辑功能。这里我们选择比较强大的TeXstudio。</li>
+</ol>
+<p><strong>二、TeXlive</strong></p>
+<p> <strong>1. 下载</strong><br>推荐下载离线安装包，然后安装的方式。可以使用官方的镜像下载，也可以利用国内的镜像下载。官方下载网址: <a href="http://www.tug.org/texlive/" target="_blank" rel="noopener">http://www.tug.org/texlive/</a><br>进入官网后，按以下操作进行：<br><img src="https://img-blog.csdnimg.cn/20200407113720505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113843733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113818579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200407113935159.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>然后选择texlive2019.iso点击进行下载。官网下载比较慢，我们可以利用国内的镜像网站来下载，这样下载速度快。清华大学镜像文件：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/</a><br><img src="https://img-blog.csdnimg.cn/20200407114040252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br> <strong>2. 安装</strong><br>将texlive2019.iso 文件解压，然后<strong>右键“以管理员身份运行”打开</strong>其中的install-tl-advanced.bat文件。<br><img src="https://img-blog.csdnimg.cn/20200407114344490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击Advanced。<br><img src="https://img-blog.csdnimg.cn/20200407114408627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>然后依次按下图操作，修改安装目录，点击安装。<br><img src="https://img-blog.csdnimg.cn/2020040711451044.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>安装完成（用时55分钟）。<br><img src="https://img-blog.csdnimg.cn/2020040711461364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>验证是否安装成功，打开cmd，输入tex -version，如果出现版本号即说明安装成功。<br><img src="https://img-blog.csdnimg.cn/20200407114909605.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>接下来就是安装LaTeX的编辑器，我们选用TeXstudio。</p>
+<p> <strong>三、TeXstudio</strong></p>
+<p> <strong>1. 下载及安装</strong><br> 直接去官网下载（需要科学上网）。官网地址：<a href="https://www.texstudio.org/" target="_blank" rel="noopener">https://www.texstudio.org/</a><br> 不需要科学上网。地址：<a href="http://texstudio.sourceforge.net/" target="_blank" rel="noopener">http://texstudio.sourceforge.net/</a><br>下载后直接点击安装，一样选择安装路径，然后进行一些简单的设置。这里我下载的安装程序为“texstudio-2.12.22-win-qt5.exe”。</p>
+<p> <strong>2. 配置</strong></p>
+<ul>
+<li>依次找到Options→Configure TeXstudio→Commands，指定Commands命令的执行程序，将BibTeX、BibTeX 8-Bit、Biber的路径设置为TeXlive安装路径下对应EXE文件。<br><img src="https://img-blog.csdnimg.cn/20200407120403549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+<li>设置中文界面：安装结束后，一开始的打开界面是英文的，这里我们可以切换成中文。<br>依次点击：Options→Configure Texstudio→General→Language→zh_CN<br><img src="https://img-blog.csdnimg.cn/20200407120542695.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+<li>添加行号：添加段落行号，这样可以很方便查看段落的某句话所在的位置，尤其是在运行报错时，有行号就非常方便查看错误的位置了。<br>依次点击：选项→设置Texstudio→显示高级选项→编辑器→显示行号→所有行号<br><img src="https://img-blog.csdnimg.cn/20200407120651367.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+<li>设置编译器与编码：为了正常的输出中文，我们需要把默认编译器改成xelatex，utf-8编码。如果是为了编写英文论文，要用“pdflatex”。<br><img src="https://img-blog.csdnimg.cn/20200407121052151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>3.测试</strong><br>输入下述代码，运行，得到下述结果即代表安装配置成功。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\documentclass[11pt]&#123;ctexart&#125;  </span><br><span class="line">\usepackage[top&#x3D;2cm, bottom&#x3D;2cm, left&#x3D;2cm, right&#x3D;2cm]&#123;geometry&#125;  </span><br><span class="line">\usepackage&#123;algorithm&#125;  </span><br><span class="line">\usepackage&#123;algorithmicx&#125;  </span><br><span class="line">\usepackage&#123;algpseudocode&#125;  </span><br><span class="line">\usepackage&#123;amsmath&#125;  </span><br><span class="line"> </span><br><span class="line">\floatname&#123;algorithm&#125;&#123;算法&#125;  </span><br><span class="line">\renewcommand&#123;\algorithmicrequire&#125;&#123;\textbf&#123;输入:&#125;&#125;  </span><br><span class="line">\renewcommand&#123;\algorithmicensure&#125;&#123;\textbf&#123;输出:&#125;&#125;  </span><br><span class="line"> </span><br><span class="line">\begin&#123;document&#125;  </span><br><span class="line">	\begin&#123;algorithm&#125;  </span><br><span class="line">		\caption&#123;用归并排序求逆序数&#125;  </span><br><span class="line">		\begin&#123;algorithmic&#125;[1] %每行显示行号  </span><br><span class="line">			\Require $Array$数组，$n$数组大小  </span><br><span class="line">			\Ensure 逆序数  </span><br><span class="line">			\Function &#123;MergerSort&#125;&#123;$Array, left, right$&#125;  </span><br><span class="line">			\State $result \gets 0$  </span><br><span class="line">			\If &#123;$left &lt; right$&#125;  </span><br><span class="line">			\State $middle \gets (left + right) &#x2F; 2$  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;MergerSort&#125;&#123;$Array, left, middle$&#125;  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;MergerSort&#125;&#123;$Array, middle, right$&#125;  </span><br><span class="line">			\State $result \gets result +$ \Call&#123;Merger&#125;&#123;$Array,left,middle,right$&#125;  </span><br><span class="line">			\EndIf  </span><br><span class="line">			\State \Return&#123;$result$&#125;  </span><br><span class="line">			\EndFunction  </span><br><span class="line">			\State  </span><br><span class="line">			\Function&#123;Merger&#125;&#123;$Array, left, middle, right$&#125;  </span><br><span class="line">			\State $i\gets left$  </span><br><span class="line">			\State $j\gets middle$  </span><br><span class="line">			\State $k\gets 0$  </span><br><span class="line">			\State $result \gets 0$  </span><br><span class="line">			\While&#123;$i&lt;middle$ \textbf&#123;and&#125; $j&lt;right$&#125;  </span><br><span class="line">			\If&#123;$Array[i]&lt;Array[j]$&#125;  </span><br><span class="line">			\State $B[k++]\gets Array[i++]$  </span><br><span class="line">			\Else  </span><br><span class="line">			\State $B[k++] \gets Array[j++]$  </span><br><span class="line">			\State $result \gets result + (middle - i)$  </span><br><span class="line">			\EndIf  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\While&#123;$i&lt;middle$&#125;  </span><br><span class="line">			\State $B[k++] \gets Array[i++]$  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\While&#123;$j&lt;right$&#125;  </span><br><span class="line">			\State $B[k++] \gets Array[j++]$  </span><br><span class="line">			\EndWhile  </span><br><span class="line">			\For&#123;$i &#x3D; 0 \to k-1$&#125;  </span><br><span class="line">			\State $Array[left + i] \gets B[i]$  </span><br><span class="line">			\EndFor  </span><br><span class="line">			\State \Return&#123;$result$&#125;  </span><br><span class="line">			\EndFunction  </span><br><span class="line">		\end&#123;algorithmic&#125;  </span><br><span class="line">	\end&#123;algorithm&#125;  </span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20200407124207109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1pzZXJlbmRpcGl0eQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>至此，TeXlive和TeXstudio的下载、安装配置及使用已经全部完成，各位小伙伴如果在安装配置过程中出现问题欢迎在评论区留言，我会及时回复。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Windows软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>工具</tag>
+        <tag>LaTeX</tag>
+        <tag>TeXlive</tag>
+        <tag>TeXstudio</tag>
       </tags>
   </entry>
 </search>
